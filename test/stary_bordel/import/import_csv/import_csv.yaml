@@ -4,7 +4,7 @@ uzivatele.csv:
   web: ""
   clen: "<<json>>"
   email: "person+emails"
-  heslo: "<password+plain---person*password>"
+  hesldo: "<password+plain---person*password>"
   jmeno: ""
   login: ""
   prava: ""
