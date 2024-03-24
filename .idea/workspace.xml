@@ -1,0 +1,424 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="08a8aebd-615c-479e-80cf-80a36b1f6f35" name="Changes" comment="csadedsed" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="UML Activity" />
+        <option value="UML MindMap" />
+        <option value="UML Component" />
+        <option value="UML YAML Data" />
+        <option value="UML Use Case" />
+        <option value="editable-svg" />
+        <option value="xml" />
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <excluded-from-favorite>
+      <branch-storage>
+        <map>
+          <entry type="REMOTE">
+            <value>
+              <list>
+                <branch-info repo="$PROJECT_DIR$/rsc/zxcvbn-czech_github/original/zxcvbn-czech" source="origin/master" />
+              </list>
+            </value>
+          </entry>
+        </map>
+      </branch-storage>
+    </excluded-from-favorite>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;history&quot;: [
+    {
+      &quot;state&quot;: &quot;OPEN&quot;
+    }
+  ],
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="9541fce6-388c-4e5a-8ce2-be4f40e61158" />
+        <option name="url" value="https://github.com/clem9669/hashcat-rule.git" />
+      </UrlAndAccount>
+    </option>
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/res/soom/zatim:nevyuzito(moc nahodna hesla)/czech.txt" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/res/soom/zatim:nevyuzito(moc nahodna hesla)/czech2.txt" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 2
+}</component>
+  <component name="ProjectId" id="2UKokGmWUv0aOEi9AEng7YpTBPp" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultPlantUmlFileTemplate&quot;: &quot;UML Use Case&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;database.data.extractors.current.export.id&quot;: &quot;Pipe-separated_id&quot;,
+    &quot;database.data.extractors.current.id&quot;: &quot;Pipe-separated_id&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/kali/Desktop/JetBrains/PyCharm/VUT_Scripts&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;sqlite&quot;
+    ]
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/rsc/nohide_space/original" />
+      <recent name="$PROJECT_DIR$/rsc/Immanuel_Kant/original/Czech_Republic 66K" />
+      <recent name="$PROJECT_DIR$/rsc/goldbismuth/edited" />
+      <recent name="$PROJECT_DIR$/rsc/UHQ_Combolist/original/62K_CZECH" />
+      <recent name="$PROJECT_DIR$/rsc/SunriseBase" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/rsc/nohide_space/original" />
+      <recent name="$PROJECT_DIR$/rsc/nohide_space/original/goldbismuth" />
+      <recent name="$PROJECT_DIR$/rsc/nohide_space/original/Immanuel_Kant" />
+      <recent name="$PROJECT_DIR$/rsc/nohide_space/edited/SunriseBase" />
+      <recent name="$PROJECT_DIR$/rsc/nohide_space/edited" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.lister">
+    <configuration name="main" type="LATEX_RUN_CONFIGURATION" factoryName="LaTeX configuration factory" temporary="true">
+      <texify>
+        <compiler>PDFLATEX</compiler>
+        <compiler-path />
+        <sumatra-path />
+        <pdf-viewer>NONE</pdf-viewer>
+        <viewer-command />
+        <compiler-arguments />
+        <envs />
+        <main-file />
+        <output-path>$PROJECT_DIR$/out</output-path>
+        <auxil-path>{projectDir}/auxil</auxil-path>
+        <compile-twice>false</compile-twice>
+        <output-format>PDF</output-format>
+        <latex-distribution>TEXLIVE</latex-distribution>
+        <has-been-run>true</has-been-run>
+        <bib-run-config>[]</bib-run-config>
+        <makeindex-run-config>[]</makeindex-run-config>
+      </texify>
+      <method v="2" />
+    </configuration>
+    <configuration name="lister" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="passwordList" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test/stary_bordel/lister.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="soucet" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="passwordList" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/soucet.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.soucet" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-python-sdk-5a2391486177-2887949eec09-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-233.13763.11" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="08a8aebd-615c-479e-80cf-80a36b1f6f35" name="Changes" comment="" />
+      <created>1692697774277</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1692697774277</updated>
+      <workItem from="1692697778922" duration="5239000" />
+      <workItem from="1695028672057" duration="515000" />
+      <workItem from="1695311035292" duration="20000" />
+      <workItem from="1695464926279" duration="16000" />
+      <workItem from="1696517186675" duration="1943000" />
+      <workItem from="1696519489745" duration="305000" />
+      <workItem from="1696519927605" duration="400000" />
+      <workItem from="1696521094176" duration="626000" />
+      <workItem from="1696593532417" duration="2990000" />
+      <workItem from="1696601969382" duration="825000" />
+      <workItem from="1696674380700" duration="44000" />
+      <workItem from="1696950408468" duration="1502000" />
+      <workItem from="1696968085074" duration="6000" />
+      <workItem from="1697002778887" duration="1996000" />
+      <workItem from="1697122545772" duration="2198000" />
+      <workItem from="1697127182474" duration="3672000" />
+      <workItem from="1697366066907" duration="6000" />
+      <workItem from="1697633457455" duration="321000" />
+      <workItem from="1697634377915" duration="744000" />
+      <workItem from="1697644347620" duration="1697000" />
+      <workItem from="1697646234284" duration="1391000" />
+      <workItem from="1697647937228" duration="388000" />
+      <workItem from="1697658008216" duration="8000" />
+      <workItem from="1697659868031" duration="916000" />
+      <workItem from="1697727882670" duration="723000" />
+      <workItem from="1698139064616" duration="54000" />
+      <workItem from="1698333097068" duration="5719000" />
+      <workItem from="1698350648208" duration="10079000" />
+      <workItem from="1698394536271" duration="4936000" />
+      <workItem from="1698399891493" duration="5205000" />
+      <workItem from="1698407689876" duration="1459000" />
+      <workItem from="1698414479446" duration="6891000" />
+      <workItem from="1698510146169" duration="2072000" />
+      <workItem from="1699275886100" duration="2159000" />
+      <workItem from="1705235596495" duration="1034000" />
+      <workItem from="1705247317974" duration="4930000" />
+      <workItem from="1705321723156" duration="3651000" />
+      <workItem from="1705513578714" duration="35000" />
+      <workItem from="1705567126853" duration="32231000" />
+      <workItem from="1705685239778" duration="10537000" />
+      <workItem from="1705704002082" duration="10250000" />
+      <workItem from="1705748367913" duration="3307000" />
+      <workItem from="1705754826075" duration="5855000" />
+      <workItem from="1705766937841" duration="3704000" />
+      <workItem from="1705835510788" duration="4221000" />
+      <workItem from="1705925953609" duration="15067000" />
+      <workItem from="1705963688639" duration="417000" />
+      <workItem from="1706019404701" duration="907000" />
+      <workItem from="1706101395695" duration="35000" />
+      <workItem from="1706113955881" duration="3693000" />
+      <workItem from="1706213321810" duration="8000" />
+      <workItem from="1706600959902" duration="4812000" />
+      <workItem from="1706617852122" duration="9225000" />
+      <workItem from="1706706648369" duration="369000" />
+      <workItem from="1706707138919" duration="660000" />
+      <workItem from="1706713790762" duration="2855000" />
+      <workItem from="1706717678565" duration="2915000" />
+      <workItem from="1706721269165" duration="3068000" />
+      <workItem from="1706740968349" duration="67000" />
+      <workItem from="1706773552374" duration="2196000" />
+      <workItem from="1706775760658" duration="5451000" />
+      <workItem from="1706781435608" duration="4190000" />
+      <workItem from="1706863803811" duration="2003000" />
+      <workItem from="1706953494809" duration="2887000" />
+      <workItem from="1707216596159" duration="167000" />
+      <workItem from="1707559622325" duration="1197000" />
+      <workItem from="1707854742841" duration="575000" />
+      <workItem from="1707980595443" duration="555000" />
+      <workItem from="1707981240466" duration="2660000" />
+      <workItem from="1707983904088" duration="2000" />
+      <workItem from="1707986030544" duration="1226000" />
+      <workItem from="1708002260238" duration="16000" />
+      <workItem from="1708003417457" duration="125000" />
+      <workItem from="1708201025880" duration="10000" />
+      <workItem from="1708250151671" duration="86000" />
+      <workItem from="1708328682876" duration="616000" />
+      <workItem from="1708367725335" duration="53000" />
+      <workItem from="1709190969953" duration="122000" />
+      <workItem from="1709191598928" duration="9000" />
+      <workItem from="1709647855302" duration="3000" />
+      <workItem from="1710413737267" duration="5000" />
+      <workItem from="1710539289257" duration="4071000" />
+      <workItem from="1710543437173" duration="599000" />
+      <workItem from="1710576605989" duration="4139000" />
+      <workItem from="1710610126226" duration="1399000" />
+      <workItem from="1710617248911" duration="1442000" />
+      <workItem from="1710633244651" duration="617000" />
+      <workItem from="1710633875895" duration="32000" />
+      <workItem from="1710633920002" duration="2724000" />
+      <workItem from="1710667527712" duration="21000" />
+      <workItem from="1710683653773" duration="1335000" />
+      <workItem from="1710687111720" duration="81000" />
+      <workItem from="1710783115469" duration="3139000" />
+      <workItem from="1710786818822" duration="1592000" />
+      <workItem from="1710795238776" duration="6230000" />
+      <workItem from="1710836886769" duration="1089000" />
+      <workItem from="1710842687829" duration="5892000" />
+      <workItem from="1710857077765" duration="5367000" />
+      <workItem from="1710872093452" duration="1792000" />
+      <workItem from="1710918042191" duration="27000" />
+      <workItem from="1710920094057" duration="9000" />
+      <workItem from="1710921642358" duration="2986000" />
+      <workItem from="1710925539568" duration="612000" />
+      <workItem from="1710952445500" duration="40000" />
+      <workItem from="1711017993647" duration="156000" />
+      <workItem from="1711028407288" duration="427000" />
+      <workItem from="1711100614979" duration="177000" />
+      <workItem from="1711111582833" duration="171000" />
+      <workItem from="1711111774197" duration="4000" />
+      <workItem from="1711112520667" duration="60000" />
+      <workItem from="1711193495563" duration="963000" />
+      <workItem from="1711194762868" duration="2667000" />
+      <workItem from="1711200287322" duration="1713000" />
+      <workItem from="1711205161074" duration="7601000" />
+      <workItem from="1711235365582" duration="2805000" />
+      <workItem from="1711271663165" duration="1306000" />
+    </task>
+    <task id="LOCAL-00001" summary="scripts and resource database">
+      <option name="closed" value="true" />
+      <created>1705600264220</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1705600264220</updated>
+    </task>
+    <task id="LOCAL-00002" summary="awdwadawdaw">
+      <option name="closed" value="true" />
+      <created>1710633299404</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1710633299404</updated>
+    </task>
+    <task id="LOCAL-00003" summary="awdwadawdawwada">
+      <option name="closed" value="true" />
+      <created>1711272727451</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1711272727451</updated>
+    </task>
+    <task id="LOCAL-00004" summary="csadedsed">
+      <option name="closed" value="true" />
+      <created>1711272958994</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1711272958994</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="dependencySupport" implementationName="executable:docker" />
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.mp" />
+    <option featureType="com.intellij.configurationType" implementationName="LATEX_RUN_CONFIGURATION" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="origin/master" />
+                </option>
+              </RecentGroup>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="HEAD" />
+                </option>
+              </RecentGroup>
+            </list>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="scripts and resource database" />
+    <MESSAGE value="awdwadawdaw" />
+    <MESSAGE value="awdwadawdawwada" />
+    <MESSAGE value="csadedsed" />
+    <option name="LAST_COMMIT_MESSAGE" value="csadedsed" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/passwordList$main.coverage" NAME="main Coverage Results" MODIFIED="1698405684005" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/passwordList$soucet.coverage" NAME="soucet Coverage Results" MODIFIED="1699277880467" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/passwordList$lister.coverage" NAME="lister Coverage Results" MODIFIED="1699278017768" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+  </component>
+</project>

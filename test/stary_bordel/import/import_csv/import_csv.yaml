@@ -1,0 +1,16 @@
+comment: "+ bude pridat, - odebrat, > prepsat"
+uzivatele.csv:
+  id: ""
+  web: ""
+  clen: "<<json>>"
+  email: "person+emails"
+  heslo: "<password+plain---person*password>"
+  jmeno: ""
+  login: ""
+  prava: ""
+  titul: ""
+  profil: ""
+  prijmeni: ""
+  lastlogin: ""
+  zobrazmail: ""
+

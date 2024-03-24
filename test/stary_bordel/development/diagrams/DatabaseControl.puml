@@ -1,0 +1,36 @@
+@startuml
+
+title Database connections
+
+object person {
+ names
+ emails
+ phone_numbers
+ json_info
+ description
+}
+object password {
+ plaint
+ hash_<hash_type>
+ description
+}
+object account {
+ web
+ connections
+ id
+ URL
+ description
+}
+object resource {
+ date
+ name
+ link
+ used_tool
+ hash_algorithms
+ database_type
+ description
+}
+
+person <-> password
+account <--> password
+@enduml

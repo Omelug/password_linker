@@ -1,0 +1,3 @@
+name_config:
+ password_database: "../res/passwords/pwd_db.db"
+ input_folder: "../res/input"

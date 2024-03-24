@@ -1,0 +1,1 @@
+ hashcat --hash-type 100  linkedLists/sha1.txt  linkedLists/pass.txt -O --show -o linkedLists/result.txt > linkedLists/res.txt
