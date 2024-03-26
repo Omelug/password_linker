@@ -2,7 +2,6 @@ import argparse
 import json
 import time
 import subprocess
-from sys import stderr
 
 from selenium import webdriver
 from selenium.common import NoSuchElementException
@@ -10,7 +9,13 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
 
-file_path = "posts.txt"
+import logging
+
+logging.basicConfig(level=logging.INFO,
+                    # filename="main.log",
+                    format="%(asctime)s:%(levelname)s:%(message)s (Line: %(lineno)d [%(filename)s])"
+                    )
+file_post = "posts.txt"
 file_path_out = "posts_text.txt"
 file_link_list = "links.txt"
 file_downloaded_list = "links_downloaded.txt"
@@ -19,18 +24,18 @@ option_file = "options.json"
 site_name = "nohide-space"
 
 
-def create_file_if_not_exists(file):
+# return 1 if created, 0 if alredy existed, -1 if error
+def create_file_if_not_exists(file: str) -> int:
     try:
         with open(file, 'r'):
-            pass
+            return 0
     except FileNotFoundError:
         with open(file, 'w'):
-            pass
-        print(f"File '{file}' created successfully.", file=stderr)
+            logging.info(f"File '{file}' created successfully.")
+            return 1
 
 
-def load_config(config_file_path, key):
-    print(config_file_path)
+def load_config(config_file_path: str, key: str) -> int:
     try:
         with open(config_file_path, "r") as config_file:
             config = json.load(config_file)
@@ -39,22 +44,21 @@ def load_config(config_file_path, key):
         return None
 
 
-def update_config(config_file_path, key, new_value):
-    try:
+def update_config(config_file_path: str, key: str, new_value: str):
+    if create_file_if_not_exists(config_file_path):
+        config_data = {}
+    else:
         with open(config_file_path, 'r') as config_file:
             config_data = json.load(config_file)
-    except FileNotFoundError:
-        print(f"File '{config_file_path}' not found. Creating a new configuration.")
-        config_data = {}
     try:
         config_data[key] = new_value
         with open(config_file_path, 'w') as json_file:
             json.dump(config_data, json_file, indent=4)
     except ValueError:
-        print("Invalid input")
+        logging.critical(f"Invalid value {new_value} for key {key}")
 
 
-def load_config_default(config_file, key, default):
+def load_config_default(config_file: str, key: str, default: str):
     is_none = load_config(config_file, key)
     if is_none is None:
         is_none = default
@@ -62,9 +66,10 @@ def load_config_default(config_file, key, default):
 
 
 def get_post_list():
-    create_file_if_not_exists(file_path)
+    create_file_if_not_exists(file_post)
 
-    with open(file_path, 'r') as file:
+    with open(file_post, 'r') as file:
+        file.seek(0)
         lines = file.readlines()
     next_page = True
     while next_page:
@@ -76,15 +81,12 @@ def get_post_list():
             link = row.find_element(By.CLASS_NAME, "contentRow-title").find_element(By.XPATH, './/a').get_attribute(
                 "href")
             if float(time_attribute_value) > last_time_list:
-                print(f"{link}")
+                logging.info(f"{link}")
                 link = link + "\n"
-
                 if link.strip() not in lines:
-                    with open(file_path, 'a') as file:
-                        file.write(link)
-                    pass
+                    file.write(link)
                 else:
-                    print("Line already exists in the file.")
+                    logging.info(f"Line {link} exists in the {file_post}.")
             else:
                 next_page = False
                 break
@@ -94,23 +96,21 @@ def get_post_list():
             next_page_link = driver.find_element(By.XPATH,
                                                  ".//a[contains(@class, 'pageNav-jump') and contains(@class, 'pageNav-jump--next')]")
             next_page_link.click()
-
-            # WebDriverWait(driver, 10).until(EC.url_changes(driver.current_url))
-            print("Next page loading.")
+            logging.info("Next page loading.")
             driver.implicitly_wait(5)
 
         except NoSuchElementException:
-            print("No Next button ", file=stderr)
+            logging.info("No Next button")
             break
     update_config(option_file, "last_time_list", time.time())
 
 
 def get_link_from_posts():
-    create_file_if_not_exists(file_path)
+    create_file_if_not_exists(file_post)
     create_file_if_not_exists(file_path_out)
     create_file_if_not_exists(file_link_list)
 
-    with open(file_path, "r") as file:
+    with open(file_post, "r") as file:
         post_links = file.readlines()
 
     with open(file_path_out, "w") as output_file:
@@ -121,25 +121,25 @@ def get_link_from_posts():
                 message_content = driver.find_element(By.CLASS_NAME, "message--post")
                 text = message_content.text.strip()
                 output_file.write(text + "\n")
-                print("Now:", username, ":", post_link.strip())
+                logging.info("Now:", username, ":", post_link.strip())
                 data_links = message_content.find_elements(By.CLASS_NAME, "link--external")
                 with open(file_link_list, "a") as file_links:
                     for data_link in data_links:
                         file_links.write(f"{site_name}:{username}:{data_link.get_attribute('href')}\n")
                 input()
             except NoSuchElementException as e:
-                print("Element  not found:", e)
+                logging.info("Element  not found:", e)
     update_config(option_file, "last_time_posts", time.time())
 
 
-#read from stdin
+# read from stdin
 def download_files():
     create_file_if_not_exists(file_link_list)
     create_file_if_not_exists(file_downloaded_list)
 
-    #TODO TODO TODo
-    #open link and chcek name if already in links_downloaded.txt
-    #if  yes, print warning
+    # TODO TODO TODo
+    # open link and chcek name if already in links_downloaded.txt
+    # if  yes, print warning
     # if not try downloading download, also print  (create verbose for ir)
 
     # for downloading jump to part for solve specific links
@@ -151,7 +151,9 @@ def download_files():
 
 
 if __name__ == "__main__":
-
+    """
+        log in into no space, get post from last_time, download posts from last time
+    """
     parser = argparse.ArgumentParser()
 
     parser.add_argument("-", "--hostname", help="Database name")
@@ -182,4 +184,4 @@ if __name__ == "__main__":
         subprocess.run(["sort", "-u", file_link_list, "-o", file_link_list], check=True)
 
     if args.download:
-        download_files() #read from stdin
+        download_files()  # read from stdin

@@ -4,11 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="08a8aebd-615c-479e-80cf-80a36b1f6f35" name="Changes" comment="nohide-space last time saved">
+    <list default="true" id="08a8aebd-615c-479e-80cf-80a36b1f6f35" name="Changes" comment="nohide-space better separation of functions, ready for download from links">
+      <change afterPath="$PROJECT_DIR$/PythonWebBots/docs/commands.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PythonWebBots/test.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PythonWebBots/nohide_space/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/PythonWebBots/nohide_space/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PythonWebBots/nohide_space/nohide-space.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PythonWebBots/nohide_space/options.json" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,6 +85,8 @@
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;DefaultPlantUmlFileTemplate&quot;: &quot;UML Use Case&quot;,
+    &quot;Python.lister.executor&quot;: &quot;Debug&quot;,
+    &quot;Python.main.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
@@ -122,7 +124,7 @@
       <recent name="$PROJECT_DIR$/rsc/nohide_space/edited" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.lister">
+  <component name="RunManager" selected="Python.main">
     <configuration name="main" type="LATEX_RUN_CONFIGURATION" factoryName="LaTeX configuration factory" temporary="true">
       <texify>
         <compiler>PDFLATEX</compiler>
@@ -159,6 +161,29 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test/stary_bordel/lister.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="passwordList" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/TelegramChecker/regex_checker" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/TelegramChecker/regex_checker/main.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -335,7 +360,13 @@
       <workItem from="1711405380105" duration="306000" />
       <workItem from="1711406309674" duration="935000" />
       <workItem from="1711407257607" duration="39000" />
-      <workItem from="1711407307622" duration="4047000" />
+      <workItem from="1711407307622" duration="4415000" />
+      <workItem from="1711433659358" duration="1563000" />
+      <workItem from="1711435267004" duration="192000" />
+      <workItem from="1711435488078" duration="140000" />
+      <workItem from="1711435638278" duration="994000" />
+      <workItem from="1711440884244" duration="6002000" />
+      <workItem from="1711492385809" duration="1624000" />
     </task>
     <task id="LOCAL-00001" summary="scripts and resource database">
       <option name="closed" value="true" />
@@ -393,7 +424,15 @@
       <option name="project" value="LOCAL" />
       <updated>1711298269684</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="nohide-space better separation of functions, ready for download from links">
+      <option name="closed" value="true" />
+      <created>1711411722176</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1711411722176</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -454,11 +493,12 @@
     <MESSAGE value="csadedsed" />
     <MESSAGE value="gitignore .idea" />
     <MESSAGE value="nohide-space last time saved" />
-    <option name="LAST_COMMIT_MESSAGE" value="nohide-space last time saved" />
+    <MESSAGE value="nohide-space better separation of functions, ready for download from links" />
+    <option name="LAST_COMMIT_MESSAGE" value="nohide-space better separation of functions, ready for download from links" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/passwordList$main.coverage" NAME="main Coverage Results" MODIFIED="1698405684005" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/passwordList$soucet.coverage" NAME="soucet Coverage Results" MODIFIED="1699277880467" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/passwordList$lister.coverage" NAME="lister Coverage Results" MODIFIED="1699278017768" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/passwordList$lister.coverage" NAME="lister Coverage Results" MODIFIED="1711435322603" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/passwordList$main.coverage" NAME="main Coverage Results" MODIFIED="1711435402754" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/TelegramChecker/regex_checker" />
   </component>
 </project>
