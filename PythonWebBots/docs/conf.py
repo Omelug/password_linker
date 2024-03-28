@@ -20,7 +20,8 @@ author = 'Gulemo'
 extensions = [ 'sphinx.ext.autodoc',
            'sphinx.ext.doctest',
             'sphinx.ext.napoleon',
-           'sphinx.ext.intersphinx'
+           'sphinx.ext.intersphinx',
+            "sphinx_comments"
           ]
 
 templates_path = ['_templates']
