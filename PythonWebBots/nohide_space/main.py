@@ -123,7 +123,7 @@ def all_items_in_list_in_file(data_links, file_path):
     for link in data_links:
         grep_command.extend(["-e", link])
     grep_command.append(file_path)
-    # print(grep_command)
+    #logging.info(grep_command)
     result = subprocess.run(grep_command, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     if result.returncode == 0:
         stdout_str = result.stdout.strip()
@@ -156,20 +156,20 @@ def get_link_from_posts():
             logging.info(f"Now: {username}:{post_link.strip()}")
             data_links = message_content.find_elements(By.CLASS_NAME, "link--external")
 
-            with (open(file_links, "a") as file_links):
+            with (open(links_file, "a") as file_links_f):
                 for index, data_link in enumerate(data_links):
                     print(f"{index} {username}\t{data_link.get_attribute('href')}")
                 # already in file, skip input
                 flist = [data_link.get_attribute('href') for data_link in data_links]
-                if all_items_in_list_in_file(flist, file_links) or \
+                if all_items_in_list_in_file(flist, links_file) or \
                         all_items_in_list_in_file(flist, combo_links_file):
-                    logging.info(f"File {file_links} already contains all links.")
+                    logging.info(f"File {links_file} already contains all links.")
                     continue
                 inp = input("Save: [A]ll, To [C]ombo list,  [N]othing, number separated with , :")
                 if inp == "A" or inp == "":
                     for data_link in data_links:
                         line = f"{SITE_NAME}\t{username}\t{data_link.get_attribute('href')}\t{post_link.strip()}"
-                        file_links.write(f"{line}\n")
+                        file_links_f.write(f"{line}\n")
                 elif inp == "N":
                     pass
                 elif inp == "C":
@@ -183,7 +183,7 @@ def get_link_from_posts():
                         logging.warning(f"Invalid value {inp}, added all")
                     for index, data_link in enumerate(data_links):
                         if index in indexes:
-                            file_links.write(
+                            file_links_f.write(
                                 f"{SITE_NAME}\t{username}\t{data_link.get_attribute('href')}\t{post_link.strip()}\n")
         except NoSuchElementException as e:
             logging.info("Element  not found:", e)
@@ -221,6 +221,10 @@ def download_files(driver):
                             download_link = driver.find_element(By.ID, "d_l").get_attribute("href")
                             if download_with_wget(download_link, "../../rsc/nohide_space/original"):
                                 links_downloaded.write(f"{link}")
+                        if re.compile("^https://pixeldrain.com/u/.*?$").match(link):
+                            download_link = link.strip().replace("/u/", "/api/file/")
+                            if download_with_wget(download_link, "../../rsc/nohide_space/original"):
+                                links_downloaded.write(f"{link}")
                         else:
                             logging.warning(f"{link.strip()} is unsupported, skip")
                     except Exception as e:
@@ -255,7 +259,6 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
 
     parser.add_argument("-", "--hostname", help="Database name")
-    parser.add_argument("-size", "--size", help="Size", type=int)
     parser.add_argument('--check', action=argparse.BooleanOptionalAction)
     parser.add_argument('--postit', action=argparse.BooleanOptionalAction)
     parser.add_argument('--download', action=argparse.BooleanOptionalAction)
@@ -268,15 +271,16 @@ if __name__ == "__main__":
     options.set_preference("browser.download.dir", "./downloads")
     options.set_preference("browser.helperApps.neverAsk.saveToDisk", "application/x-gzip")
 
-    driver = webdriver.Firefox(options=options)
+    driver = webdriver.Firefox()
+
+    if args.check or args.postit:
+        get_main_page(driver)
 
     if args.check:
-        get_main_page(driver)
         last_time_list = load_config_default(option_file, "last_time_list", 0)
         get_post_list()
         subprocess.run(["sort", "-u", posts_file, "-o", posts_file], check=True)
     if args.postit:
-        get_main_page(driver)
         last_time_posts = load_config_default(option_file, "last_time_list", 0)
         get_link_from_posts()
         subprocess.run(["sort", "-u", links_file, "-o", links_file], check=True)

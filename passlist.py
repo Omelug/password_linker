@@ -1,5 +1,6 @@
 import sys
 import re
+import logging
 
 SEP = ':'  # SEPARATOR
 DEBUG = 1
@@ -15,7 +16,8 @@ def getregex(key):
         "md5": ".{32}",
         "sha1": ".{40}",
         "pass": ".*?",
-        "user": ".*?"
+        "user": ".*?",
+        "email": ".*?@.*?"
     }
     try:
         return key_value_map[key]
@@ -103,6 +105,7 @@ def file_regex(input_stream):
 if __name__ == "__main__":
     if len(sys.argv) < 2:
         help()
+        sys.exit(1)
     if sys.argv[1] == "file_regex":
         file_regex(sys.stdin)
     if sys.argv[1] == "control":

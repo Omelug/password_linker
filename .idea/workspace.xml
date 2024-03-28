@@ -4,11 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="08a8aebd-615c-479e-80cf-80a36b1f6f35" name="Changes" comment="nohide-space better separation of functions, ready for download from links">
-      <change afterPath="$PROJECT_DIR$/PythonWebBots/docs/commands.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PythonWebBots/test.py" afterDir="false" />
+    <list default="true" id="08a8aebd-615c-479e-80cf-80a36b1f6f35" name="Changes" comment="Ono to funguje! no_hide space zbezne dodelan celej proces pro upload.ee linky">
+      <change afterPath="$PROJECT_DIR$/script/format/file_to_folder.sh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PythonWebBots/docs/_build/html/.buildinfo" beforeDir="false" afterPath="$PROJECT_DIR$/PythonWebBots/docs/_build/html/.buildinfo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PythonWebBots/docs/_build/html/searchindex.js" beforeDir="false" afterPath="$PROJECT_DIR$/PythonWebBots/docs/_build/html/searchindex.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PythonWebBots/nohide_space/links.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/PythonWebBots/nohide_space/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/PythonWebBots/nohide_space/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PythonWebBots/nohide_space/options.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PythonWebBots/nohide_space/posts.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PythonWebBots/nohide_space/posts_text.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/passlist.py" beforeDir="false" afterPath="$PROJECT_DIR$/passlist.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,7 +99,7 @@
     &quot;database.data.extractors.current.export.id&quot;: &quot;Pipe-separated_id&quot;,
     &quot;database.data.extractors.current.id&quot;: &quot;Pipe-separated_id&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/kali/Desktop/JetBrains/PyCharm/passwordList/PythonWebBots&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/kali/Desktop/JetBrains/PyCharm/passwordList&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -110,18 +116,18 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/PythonWebBots" />
+      <recent name="$PROJECT_DIR$/PythonWebBots/tests" />
+      <recent name="$PROJECT_DIR$/PythonWebBots/nohide_space" />
       <recent name="$PROJECT_DIR$/rsc/nohide_space/original" />
-      <recent name="$PROJECT_DIR$/rsc/Immanuel_Kant/original/Czech_Republic 66K" />
-      <recent name="$PROJECT_DIR$/rsc/goldbismuth/edited" />
-      <recent name="$PROJECT_DIR$/rsc/UHQ_Combolist/original/62K_CZECH" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/PythonWebBots" />
+      <recent name="$PROJECT_DIR$/PythonWebBots/tests" />
+      <recent name="$PROJECT_DIR$/PythonWebBots/nohide_space" />
       <recent name="$PROJECT_DIR$/rsc/nohide_space/original" />
       <recent name="$PROJECT_DIR$/rsc/nohide_space/original/goldbismuth" />
-      <recent name="$PROJECT_DIR$/rsc/nohide_space/original/Immanuel_Kant" />
-      <recent name="$PROJECT_DIR$/rsc/nohide_space/edited/SunriseBase" />
-      <recent name="$PROJECT_DIR$/rsc/nohide_space/edited" />
     </key>
   </component>
   <component name="RunManager" selected="Python.main">
@@ -366,7 +372,24 @@
       <workItem from="1711435488078" duration="140000" />
       <workItem from="1711435638278" duration="994000" />
       <workItem from="1711440884244" duration="6002000" />
-      <workItem from="1711492385809" duration="1624000" />
+      <workItem from="1711492385809" duration="1946000" />
+      <workItem from="1711494435752" duration="2934000" />
+      <workItem from="1711526326511" duration="2673000" />
+      <workItem from="1711530438691" duration="2043000" />
+      <workItem from="1711533211167" duration="922000" />
+      <workItem from="1711538182201" duration="622000" />
+      <workItem from="1711539236408" duration="1580000" />
+      <workItem from="1711542210473" duration="2327000" />
+      <workItem from="1711549213278" duration="1874000" />
+      <workItem from="1711551697062" duration="2807000" />
+      <workItem from="1711556128399" duration="2369000" />
+      <workItem from="1711558820491" duration="3030000" />
+      <workItem from="1711609258905" duration="1607000" />
+      <workItem from="1711612079063" duration="65000" />
+      <workItem from="1711612196336" duration="4590000" />
+      <workItem from="1711617735871" duration="4994000" />
+      <workItem from="1711623170915" duration="2767000" />
+      <workItem from="1711627070634" duration="1985000" />
     </task>
     <task id="LOCAL-00001" summary="scripts and resource database">
       <option name="closed" value="true" />
@@ -432,7 +455,23 @@
       <option name="project" value="LOCAL" />
       <updated>1711411722176</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="basic set up of documentation">
+      <option name="closed" value="true" />
+      <created>1711494331052</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1711494331052</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Ono to funguje! no_hide space zbezne dodelan celej proces pro upload.ee linky">
+      <option name="closed" value="true" />
+      <created>1711620160441</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1711620160441</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -494,7 +533,9 @@
     <MESSAGE value="gitignore .idea" />
     <MESSAGE value="nohide-space last time saved" />
     <MESSAGE value="nohide-space better separation of functions, ready for download from links" />
-    <option name="LAST_COMMIT_MESSAGE" value="nohide-space better separation of functions, ready for download from links" />
+    <MESSAGE value="basic set up of documentation" />
+    <MESSAGE value="Ono to funguje! no_hide space zbezne dodelan celej proces pro upload.ee linky" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ono to funguje! no_hide space zbezne dodelan celej proces pro upload.ee linky" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/passwordList$soucet.coverage" NAME="soucet Coverage Results" MODIFIED="1699277880467" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
