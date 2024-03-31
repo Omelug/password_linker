@@ -88,6 +88,8 @@ def link_colmun(input_stream, key):
                             empty = empty + 1
                         else:
                             print(parts[index])
+            except IndexError:
+                print(f"Inder Error: {file}")
             except FileNotFoundError:
                 print(f"Error: File '{line}' not found.")
         except ValueError as e:

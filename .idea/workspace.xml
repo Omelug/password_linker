@@ -4,16 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="08a8aebd-615c-479e-80cf-80a36b1f6f35" name="Changes" comment="Ono to funguje! no_hide space zbezne dodelan celej proces pro upload.ee linky">
-      <change afterPath="$PROJECT_DIR$/script/format/file_to_folder.sh" afterDir="false" />
+    <list default="true" id="08a8aebd-615c-479e-80cf-80a36b1f6f35" name="Changes" comment="drive double init fix">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PythonWebBots/docs/_build/html/.buildinfo" beforeDir="false" afterPath="$PROJECT_DIR$/PythonWebBots/docs/_build/html/.buildinfo" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PythonWebBots/docs/_build/html/searchindex.js" beforeDir="false" afterPath="$PROJECT_DIR$/PythonWebBots/docs/_build/html/searchindex.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PythonWebBots/nohide_space/links.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/PythonWebBots/nohide_space/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/PythonWebBots/nohide_space/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PythonWebBots/nohide_space/options.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PythonWebBots/nohide_space/posts.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PythonWebBots/nohide_space/posts_text.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/passlist.py" beforeDir="false" afterPath="$PROJECT_DIR$/passlist.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -123,11 +116,11 @@
       <recent name="$PROJECT_DIR$/rsc/nohide_space/original" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/rsc/Cit0day/original" />
       <recent name="$PROJECT_DIR$/PythonWebBots" />
       <recent name="$PROJECT_DIR$/PythonWebBots/tests" />
       <recent name="$PROJECT_DIR$/PythonWebBots/nohide_space" />
       <recent name="$PROJECT_DIR$/rsc/nohide_space/original" />
-      <recent name="$PROJECT_DIR$/rsc/nohide_space/original/goldbismuth" />
     </key>
   </component>
   <component name="RunManager" selected="Python.main">
@@ -390,6 +383,15 @@
       <workItem from="1711617735871" duration="4994000" />
       <workItem from="1711623170915" duration="2767000" />
       <workItem from="1711627070634" duration="1985000" />
+      <workItem from="1711629275595" duration="384000" />
+      <workItem from="1711633363033" duration="1230000" />
+      <workItem from="1711652748586" duration="725000" />
+      <workItem from="1711660774533" duration="1030000" />
+      <workItem from="1711708489686" duration="903000" />
+      <workItem from="1711751651926" duration="2611000" />
+      <workItem from="1711806100921" duration="26000" />
+      <workItem from="1711818116385" duration="2371000" />
+      <workItem from="1711842813187" duration="710000" />
     </task>
     <task id="LOCAL-00001" summary="scripts and resource database">
       <option name="closed" value="true" />
@@ -471,7 +473,15 @@
       <option name="project" value="LOCAL" />
       <updated>1711620160441</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="drive double init fix">
+      <option name="closed" value="true" />
+      <created>1711629542055</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1711629542055</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -535,7 +545,8 @@
     <MESSAGE value="nohide-space better separation of functions, ready for download from links" />
     <MESSAGE value="basic set up of documentation" />
     <MESSAGE value="Ono to funguje! no_hide space zbezne dodelan celej proces pro upload.ee linky" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ono to funguje! no_hide space zbezne dodelan celej proces pro upload.ee linky" />
+    <MESSAGE value="drive double init fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="drive double init fix" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/passwordList$soucet.coverage" NAME="soucet Coverage Results" MODIFIED="1699277880467" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />

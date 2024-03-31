@@ -22,6 +22,7 @@ posts_file = "posts.txt"
 links_file = "links.txt"
 only_links_file = "only_links.txt"
 combo_links_file = "combo_links.txt"
+fake_links_file = "fake_links.txt"
 links_downloaded_file = "links_downloaded.txt"
 
 option_file = "options.json"
@@ -89,6 +90,7 @@ def get_post_list():
                 time_attribute_value = time_element.get_attribute("data-time")
                 link = row.find_element(By.CLASS_NAME, "contentRow-title").find_element(By.XPATH, './/a').get_attribute(
                     "href")
+                print(f"{float(time_attribute_value)} > {last_time_list}")
                 if float(time_attribute_value) > last_time_list:
                     logging.info(f"{link}")
                     link = link + "\n"
@@ -131,7 +133,6 @@ def all_items_in_list_in_file(data_links, file_path):
             num_matches = int(stdout_str)
             return num_matches == len(data_links)
         else:
-            # No matches found
             return False
     else:
         print("Error:", result.stderr.decode())
@@ -142,6 +143,7 @@ def get_link_from_posts():
     create_file_if_not_exists(posts_file)
     create_file_if_not_exists(only_links_file)
     create_file_if_not_exists(combo_links_file)
+    create_file_if_not_exists(fake_links_file)
 
     with open(posts_file, "r") as file:
         post_links = file.readlines()
@@ -161,21 +163,29 @@ def get_link_from_posts():
                     print(f"{index} {username}\t{data_link.get_attribute('href')}")
                 # already in file, skip input
                 flist = [data_link.get_attribute('href') for data_link in data_links]
+                #TODO muzou byt ruzne, ale aspon v jednom listu
                 if all_items_in_list_in_file(flist, links_file) or \
-                        all_items_in_list_in_file(flist, combo_links_file):
+                        all_items_in_list_in_file(flist, combo_links_file) or \
+                        all_items_in_list_in_file(flist, fake_links_file):
                     logging.info(f"File {links_file} already contains all links.")
                     continue
-                inp = input("Save: [A]ll, To [C]ombo list,  [N]othing, number separated with , :")
-                if inp == "A" or inp == "":
+                inp = input("Save: [A]ll, To [C]ombo list, [F]ake, [N]othing, number separated with , :")
+
+                #TODO switch
+                if inp.lower() == "a" or inp == "":
                     for data_link in data_links:
                         line = f"{SITE_NAME}\t{username}\t{data_link.get_attribute('href')}\t{post_link.strip()}"
                         file_links_f.write(f"{line}\n")
-                elif inp == "N":
+                elif inp.lower() == "n":
                     pass
-                elif inp == "C":
+                elif inp.lower() == "c":
                     with open(combo_links_file, "a") as file_combo_links:
                         line = f"{SITE_NAME}\t{username}\t{data_link.get_attribute('href')}\t{post_link.strip()}"
                         file_combo_links.write(f"{line}\n")
+                elif inp.lower() == "f":
+                    with open(fake_links_file, "a") as file_fake_links:
+                        line = f"{SITE_NAME}\t{username}\t{data_link.get_attribute('href')}\t{post_link.strip()}"
+                        file_fake_links.write(f"{line}\n")
                 else:
                     try:
                         indexes = list(map(int, inp.split(",")))
@@ -189,7 +199,7 @@ def get_link_from_posts():
             logging.info("Element  not found:", e)
     update_config(option_file, "last_time_posts", time.time())
     logging.info("get_link_from_posts()")
-#TODo uniot test
+#TODOO uniot test
 def download_with_wget(url, output_directory):
     try:
         subprocess.run(['wget', url, '-P', output_directory], check=True)
