@@ -4,9 +4,16 @@ transform:
     hash:pass
 
 cat uzivatele_hashes.txt | awk 'length($0) > 0 {gsub(/[\(\)]/, "", $2); if ($2 != "") print $1 ":" $2; else print $1 ":" }' >temp
+--------------------------------------------------------
+get all password resources from edited
+find ./rsc/ | grep -P ".*?/edited/.*?/.*?pass(.[^/])?\.txt"  | xargs cat | sort -u  | wc
 
-link all
- find ./rsc/ | grep -P ".*?/edited/.*?/.*?pass.*?.txt" | xargs cat | sort -u  | wc
+link alll password resources from edited
+
+find ./rsc/ | grep -P ".*?/edited/.*?/.*?pass(.[^/])?\.txt" | python3 passlist.py link pass | sort -u | wc
+--------------------------------------------------------
 
 
-find ./rsc/ | grep -P ".*?/edited/.*?pass(.[^/])?\.txt" | python3 passlist.py link pass | sort -u | wc
+czech emails filter
+cat ./rsc/Big_bread_filtered/original/Cit0day/Cit0day\ cleaned.txt | grep -P "^.*?\.cz.*?$"  > ./rsc/Big_bread_filtered/edited/Cit0day/email:pass.txt
+------------------------------------------------------

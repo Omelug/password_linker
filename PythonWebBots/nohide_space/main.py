@@ -4,13 +4,19 @@ import time
 import subprocess
 import os
 from selenium import webdriver
-from selenium.common import NoSuchElementException
 from selenium.webdriver.common.by import By
 from selenium.webdriver.firefox.options import Options
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
+from selenium.common.exceptions import NoSuchElementException
 import re
 import logging
+import sys
+import datetime
+
+lib_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), '../..')
+sys.path.append(lib_dir)
+from lib.file_format import *
 
 logging.basicConfig(level=logging.INFO,
                     # filename="main.log",
@@ -29,53 +35,15 @@ option_file = "options.json"
 SITE_NAME = "nohide-space"
 
 
-def create_file_if_not_exists(file: str) -> int:
+
+
+def get_post_list() -> bool:
     """
-        @return 1 if created, 0 if already existed, -1 if error
+    Returns
+    -------
+    bool
+        succes?
     """
-    try:
-        with open(file, 'r'):
-            return 0
-    except FileNotFoundError:
-        try:
-            with open(file, 'w'):
-                logging.info(f"File '{file}' created successfully.")
-            return 1
-        except FileNotFoundError:
-            return -1
-
-
-def load_config(config_file_path: str, key: str) -> int | None:
-    try:
-        with open(config_file_path, "r") as config_file:
-            config = json.load(config_file)
-            return config.get(key)
-    except FileNotFoundError:
-        return None
-
-
-def update_config(config_file_path: str, key: str, new_value: str):
-    if create_file_if_not_exists(config_file_path):
-        config_data = {}
-    else:
-        with open(config_file_path, 'r') as config_file:
-            config_data = json.load(config_file)
-    try:
-        config_data[key] = new_value
-        with open(config_file_path, 'w') as json_file:
-            json.dump(config_data, json_file, indent=4)
-    except ValueError:
-        logging.critical(f"Invalid value {new_value} for key {key}")
-
-
-def load_config_default(config_file: str, key: str, default: str):
-    is_none = load_config(config_file, key)
-    if is_none is None:
-        is_none = default
-    return is_none
-
-
-def get_post_list():
     create_file_if_not_exists(posts_file)
 
     with open(posts_file, 'r') as file:
@@ -90,11 +58,11 @@ def get_post_list():
                 time_attribute_value = time_element.get_attribute("data-time")
                 link = row.find_element(By.CLASS_NAME, "contentRow-title").find_element(By.XPATH, './/a').get_attribute(
                     "href")
-                print(f"{float(time_attribute_value)} > {last_time_list}")
-                if float(time_attribute_value) > last_time_list:
+                #print(f"{date_to_string(float(time_attribute_value))} > {last_time_list}")
+                if date_to_string(float(time_attribute_value)) > last_time_list:
+                    #TODO save only if not already saved
                     logging.info(f"{link}")
                     link = link + "\n"
-
                     if link.strip() not in lines:
                         with open(posts_file, 'a') as file2:
                             file2.write(link)
@@ -104,7 +72,7 @@ def get_post_list():
                     next_page = False
                     break
             if not next_page:
-                break
+                return True
             try:
                 next_page_link = driver.find_element(By.XPATH,
                                                      ".//a[contains(@class, 'pageNav-jump') and contains(@class, 'pageNav-jump--next')]")
@@ -114,9 +82,7 @@ def get_post_list():
 
             except NoSuchElementException:
                 logging.info("No Next button")
-                break
-    update_config(option_file, "last_time_list", time.time())
-    logging.info("get_post_list() finished.")
+                return True
 
 
 # TODO make unit test
@@ -125,7 +91,6 @@ def all_items_in_list_in_file(data_links, file_path):
     for link in data_links:
         grep_command.extend(["-e", link])
     grep_command.append(file_path)
-    #logging.info(grep_command)
     result = subprocess.run(grep_command, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     if result.returncode == 0:
         stdout_str = result.stdout.strip()
@@ -153,8 +118,6 @@ def get_link_from_posts():
         try:
             username = driver.find_element(By.CLASS_NAME, "username ").text
             message_content = driver.find_element(By.CLASS_NAME, "message--post")
-            # text = message_content.text.strip()
-            # output_file.write(text + "\n")
             logging.info(f"Now: {username}:{post_link.strip()}")
             data_links = message_content.find_elements(By.CLASS_NAME, "link--external")
 
@@ -164,6 +127,7 @@ def get_link_from_posts():
                 # already in file, skip input
                 flist = [data_link.get_attribute('href') for data_link in data_links]
                 #TODO muzou byt ruzne, ale aspon v jednom listu
+                #FIXME COMBO listy se porad nabyzeji, i kdyz uz jsou v listech
                 if all_items_in_list_in_file(flist, links_file) or \
                         all_items_in_list_in_file(flist, combo_links_file) or \
                         all_items_in_list_in_file(flist, fake_links_file):
@@ -197,9 +161,11 @@ def get_link_from_posts():
                                 f"{SITE_NAME}\t{username}\t{data_link.get_attribute('href')}\t{post_link.strip()}\n")
         except NoSuchElementException as e:
             logging.info("Element  not found:", e)
+            return False
     update_config(option_file, "last_time_posts", time.time())
-    logging.info("get_link_from_posts()")
-#TODOO uniot test
+
+
+#TODO unit test
 def download_with_wget(url, output_directory):
     try:
         subprocess.run(['wget', url, '-P', output_directory], check=True)
@@ -208,6 +174,7 @@ def download_with_wget(url, output_directory):
     except subprocess.CalledProcessError as e:
         logging.error("Error downloading file:", e)
         return False
+
 
 # read from stdin
 def download_files(driver):
@@ -239,7 +206,6 @@ def download_files(driver):
                             logging.warning(f"{link.strip()} is unsupported, skip")
                     except Exception as e:
                         logging.error(f"Error downloading {e}")
-    print()
     # TODO TODO TODo
     # if not try downloading , also print  (create verbose for ir)
 
@@ -251,9 +217,7 @@ def download_files(driver):
     # append to links_downloaded.txt if succesfull
 
 
-def get_main_page(driver):
-    driver.get("https://nohide.space/search/572982/?q=czech&o=date")
-
+def cloudfare_wait_checkbox(driver):
     # https://stackoverflow.com/questions/76575298/how-to-click-on-verify-you-are-human-checkbox-challenge-by-cloudflare-using-se
     time.sleep(5)
     WebDriverWait(driver, 20).until(EC.frame_to_be_available_and_switch_to_it(
@@ -263,12 +227,8 @@ def get_main_page(driver):
 
 
 if __name__ == "__main__":
-    """
-        log in into no space, get post from last_time, download posts from last time
-    """
     parser = argparse.ArgumentParser()
 
-    parser.add_argument("-", "--hostname", help="Database name")
     parser.add_argument('--check', action=argparse.BooleanOptionalAction)
     parser.add_argument('--postit', action=argparse.BooleanOptionalAction)
     parser.add_argument('--download', action=argparse.BooleanOptionalAction)
@@ -283,18 +243,28 @@ if __name__ == "__main__":
 
     driver = webdriver.Firefox()
 
+    # bypass cloudflare checkbox
     if args.check or args.postit:
-        get_main_page(driver)
+        driver.get("https://nohide.space/search/572982/?q=czech&o=date")
+        cloudfare_wait_checkbox(driver)
 
     if args.check:
-        last_time_list = load_config_default(option_file, "last_time_list", 0)
-        get_post_list()
-        subprocess.run(["sort", "-u", posts_file, "-o", posts_file], check=True)
+        last_time_list = load_config(option_file, "last_time_list", "0001-01-01 00:00:00")
+        logging.info(f"last_time_list: {last_time_list}")
+        if get_post_list(): # load posts links to post_file
+            subprocess.run(["sort", "-u", posts_file, "-o", posts_file], check=True)
+            update_config(option_file, "last_time_list", now_string())
+            logging.info("get_post_list() finished.")
+        logging.info("CHECK finished succesfully")
     if args.postit:
-        last_time_posts = load_config_default(option_file, "last_time_list", 0)
-        get_link_from_posts()
-        subprocess.run(["sort", "-u", links_file, "-o", links_file], check=True)
-        subprocess.run(["sort", "-u", combo_links_file, "-o", combo_links_file], check=True)
+        last_time_posts = load_config(option_file, "last_time_list", "0001-01-01 00:00:00")
+        if get_link_from_posts(): #load resource links from posts
+            subprocess.run(["sort", "-u", links_file, "-o", links_file], check=True)
+            subprocess.run(["sort", "-u", combo_links_file, "-o", combo_links_file], check=True)
+            subprocess.run(["sort", "-u", fake_links_file, "-o", fake_links_file], check=True)
+            update_config(option_file, "last_time_list", now_string())
+            logging.info("get_link_from_posts() finished succesfully")
+        logging.info("POST IT finished.")
     if args.download:
         script_dir = os.path.dirname(os.path.abspath(__file__))
         links = os.path.join(script_dir, 'links.txt')
@@ -304,3 +274,4 @@ if __name__ == "__main__":
         subprocess.run(command, shell=True)
 
         download_files(driver=driver)
+        logging.info("DOWNLOAD finished.")
