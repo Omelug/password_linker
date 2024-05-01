@@ -25,11 +25,11 @@ logging.basicConfig(level=logging.INFO,
 
 # check -> posts.txt (sort) -> postit -> links.txt -> awk only_links.txt (sort) -> download_link.txt
 posts_file = "posts.txt"
-links_file = "links.txt"
-only_links_file = "only_links.txt"
-combo_links_file = "combo_links.txt"
-fake_links_file = "fake_links.txt"
-links_downloaded_file = "links_downloaded.txt"
+links_file = "links.txt" #for download <source> <username> <link> <post_link>
+only_links_file = "only_links.txt" #link list from  links_file <link>
+combo_links_file = "combo_links.txt" #for combos which are better to sort by hand <source> <username> <link> <post_link>
+fake_links_file = "fake_links.txt"  #for fake list of <source> <username> <link> <post_link>
+links_downloaded_file = "links_downloaded.txt" #downloaded links <link>
 
 option_file = "options.json"
 SITE_NAME = "nohide-space"
@@ -37,7 +37,7 @@ SITE_NAME = "nohide-space"
 
 
 
-def get_post_list() -> bool:
+def get_new_posts() -> bool:
     """
     Returns
     -------
@@ -86,11 +86,12 @@ def get_post_list() -> bool:
 
 
 # TODO make unit test
-def all_items_in_list_in_file(data_links, file_path):
+def all_items_in_list_in_file(data_links, *args):
     grep_command = ["grep", "-Ec", "-w"]
     for link in data_links:
         grep_command.extend(["-e", link])
-    grep_command.append(file_path)
+    for file_path in args:
+        grep_command.append(f" {file_path}")
     result = subprocess.run(grep_command, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     if result.returncode == 0:
         stdout_str = result.stdout.strip()
@@ -101,6 +102,7 @@ def all_items_in_list_in_file(data_links, file_path):
             return False
     else:
         print("Error:", result.stderr.decode())
+        print(data_links)
         return False
 
 
@@ -135,45 +137,34 @@ def get_link_from_posts():
                     continue
                 inp = input("Save: [A]ll, To [C]ombo list, [F]ake, [N]othing, number separated with , :")
 
-                #TODO switch
-                if inp.lower() == "a" or inp == "":
-                    for data_link in data_links:
-                        line = f"{SITE_NAME}\t{username}\t{data_link.get_attribute('href')}\t{post_link.strip()}"
-                        file_links_f.write(f"{line}\n")
-                elif inp.lower() == "n":
-                    pass
-                elif inp.lower() == "c":
-                    with open(combo_links_file, "a") as file_combo_links:
-                        line = f"{SITE_NAME}\t{username}\t{data_link.get_attribute('href')}\t{post_link.strip()}"
-                        file_combo_links.write(f"{line}\n")
-                elif inp.lower() == "f":
-                    with open(fake_links_file, "a") as file_fake_links:
-                        line = f"{SITE_NAME}\t{username}\t{data_link.get_attribute('href')}\t{post_link.strip()}"
-                        file_fake_links.write(f"{line}\n")
-                else:
-                    try:
-                        indexes = list(map(int, inp.split(",")))
-                    except ValueError:
-                        logging.warning(f"Invalid value {inp}, added all")
-                    for index, data_link in enumerate(data_links):
-                        if index in indexes:
-                            file_links_f.write(
-                                f"{SITE_NAME}\t{username}\t{data_link.get_attribute('href')}\t{post_link.strip()}\n")
+                match inp.lower():
+                    case "a" | "": #
+                        for data_link in data_links:
+                            line = f"{SITE_NAME}\t{username}\t{data_link.get_attribute('href')}\t{post_link.strip()}"
+                            file_links_f.write(f"{line}\n")
+                    case "n":
+                        pass
+                    case "c":
+                        with open(combo_links_file, "a") as file_combo_links:
+                            line = f"{SITE_NAME}\t{username}\t{data_link.get_attribute('href')}\t{post_link.strip()}"
+                            file_fake_links.write(f"{line}\n")
+                    case "f":
+                        with open(fake_links_file, "a") as file_fake_links:
+                            line = f"{SITE_NAME}\t{username}\t{data_link.get_attribute('href')}\t{post_link.strip()}"
+                            file_fake_links.write(f"{line}\n")
+                    case _:
+                        try:
+                            indexes = list(map(int, inp.split(",")))
+                        except ValueError:
+                            logging.warning(f"Invalid value {inp}, added all")
+                        for index, data_link in enumerate(data_links):
+                            if index in indexes:
+                                file_links_f.write(
+                                    f"{SITE_NAME}\t{username}\t{data_link.get_attribute('href')}\t{post_link.strip()}\n")
         except NoSuchElementException as e:
             logging.info("Element  not found:", e)
             return False
     update_config(option_file, "last_time_posts", time.time())
-
-
-#TODO unit test
-def download_with_wget(url, output_directory):
-    try:
-        subprocess.run(['wget', url, '-P', output_directory], check=True)
-        logging.info(f"{url} downloaded successful!")
-        return True
-    except subprocess.CalledProcessError as e:
-        logging.error("Error downloading file:", e)
-        return False
 
 
 # read from stdin
@@ -198,12 +189,12 @@ def download_files(driver):
                             download_link = driver.find_element(By.ID, "d_l").get_attribute("href")
                             if download_with_wget(download_link, "../../rsc/nohide_space/original"):
                                 links_downloaded.write(f"{link}")
-                        if re.compile("^https://pixeldrain.com/u/.*?$").match(link):
+                        elif re.compile("^https://pixeldrain.com/u/.*?$").match(link):
                             download_link = link.strip().replace("/u/", "/api/file/")
                             if download_with_wget(download_link, "../../rsc/nohide_space/original"):
                                 links_downloaded.write(f"{link}")
                         else:
-                            logging.warning(f"{link.strip()} is unsupported, skip")
+                            logging.warning(f"{link.strip()} is unsupported, skipped")
                     except Exception as e:
                         logging.error(f"Error downloading {e}")
     # TODO TODO TODo
@@ -227,10 +218,13 @@ def cloudfare_wait_checkbox(driver):
 
 
 if __name__ == "__main__":
+    """
+        
+    """
     parser = argparse.ArgumentParser()
 
-    parser.add_argument('--check', action=argparse.BooleanOptionalAction)
-    parser.add_argument('--postit', action=argparse.BooleanOptionalAction)
+    parser.add_argument('--get_new_post', action=argparse.BooleanOptionalAction)
+    parser.add_argument('--get_links', action=argparse.BooleanOptionalAction)
     parser.add_argument('--download', action=argparse.BooleanOptionalAction)
 
     args = parser.parse_args()
@@ -244,19 +238,19 @@ if __name__ == "__main__":
     driver = webdriver.Firefox()
 
     # bypass cloudflare checkbox
-    if args.check or args.postit:
+    if args.get_new_post or args.get_links:
         driver.get("https://nohide.space/search/572982/?q=czech&o=date")
         cloudfare_wait_checkbox(driver)
 
-    if args.check:
+    if args.get_new_post:
         last_time_list = load_config(option_file, "last_time_list", "0001-01-01 00:00:00")
         logging.info(f"last_time_list: {last_time_list}")
-        if get_post_list(): # load posts links to post_file
+        if get_new_posts(): # load posts links to post_file
             subprocess.run(["sort", "-u", posts_file, "-o", posts_file], check=True)
             update_config(option_file, "last_time_list", now_string())
             logging.info("get_post_list() finished.")
         logging.info("CHECK finished succesfully")
-    if args.postit:
+    if args.get_links:
         last_time_posts = load_config(option_file, "last_time_list", "0001-01-01 00:00:00")
         if get_link_from_posts(): #load resource links from posts
             subprocess.run(["sort", "-u", links_file, "-o", links_file], check=True)
