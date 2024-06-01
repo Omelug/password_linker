@@ -37,13 +37,7 @@ SITE_NAME = "nohide-space"
 
 
 
-def get_new_posts() -> bool:
-    """
-    Returns
-    -------
-    bool
-        succes?
-    """
+def get_new_posts() -> bool: # succes?
     create_file_if_not_exists(posts_file)
 
     with open(posts_file, 'r') as file:

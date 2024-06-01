@@ -1,53 +1,23 @@
 import os
 import sys
 import re
-import logging
-from datetime import datetime
 
-from colorama import init, Fore, Style
-import json
+from lib.logfile import LogFile
 
-SEP = ':'  # SEPARATOR
-LINKED_FOLDER="../linkedLists" #linkedList Deafult #TODO
+lib_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), '.')
+sys.path.append(lib_dir)
+from lib.file_format import *
+from lib.file_regex import *
 
-def help():
-    print("TODO help")
+LINKED_FOLDER = "./linkedLists"
+PATCH_FILE = "./patch"
 
-
-def getregex(key) -> str | None:
-    """
-    Returns
-    -------
-    str
-        regex for maching key or none if not exist
-    Examples
-    --------
-    >>> getregex("salt")
-    '.+?'
-    >>> getregex("not known value") # check f return None
-    """
-    key_value_map = {
-        "salt": ".+?",
-        "hash": ".*?",
-        "md5": ".{32}",
-        "sha1": ".{40}",
-        "pass": ".*?",
-        "user": ".*?",
-        "email": ".*?@.*?"
-    }
-    try:
-        return key_value_map[key]
-    except KeyError:
-        return None
-
-
-def check_file_with_regex(filepath, regex_pattern) -> bool:
-    """
-
-    """
+#  Control if in file stream has valid to regexes from file name
+def control_file_regex(filepath, regex_pattern, patch=None) -> bool:
     filepath = filepath.strip('\n')
     try:
         regex = re.compile(regex_pattern)
+        result = True
         with open(filepath, 'r') as file:
             line_number = 1
             for line in file:
@@ -55,9 +25,12 @@ def check_file_with_regex(filepath, regex_pattern) -> bool:
                     print(
                         f"{filepath} {line.strip()}   on line {line_number} \n does not match pattern: {regex_pattern}",
                         file=sys.stderr)
-                    return False
+                    if patch is True:
+                        # FIXME musi strip vymaze \n na konci,a le i mezery na zacatku, treba zmenit a vyzkouset i s posledni rakou
+                        add_unique(PATCH_FILE, f"{filepath}\t'{regex_pattern}'\t{line.rstrip()}\t|")
+                    result = False
                 line_number += 1
-        return True
+        return result
     except FileNotFoundError:
         print(f"Error: File '{filepath}' not found.", file=sys.stderr)
     except re.error as e:
@@ -65,143 +38,104 @@ def check_file_with_regex(filepath, regex_pattern) -> bool:
     return False
 
 
-def get_file_regex(filepath) -> str:
-    """
-    Returns
-    -------
-    str:
-        regex of file, extracted from filenameExamples
-    --------
-    >>> get_file_regex("/home/kali/Desktop/JetBrains/PyCharm/passwordList/rsc/data/edited/dr7_users/md5:pass.txt")
-    'md5:pass'
-    >>> get_file_regex("/edited/dr7_users/test.txt")
-    'test'
-    >>> get_file_regex("nic_nemenit")
-    'nic_nemenit'
-    """
-    return filepath.split('/')[-1].rstrip('\n').removesuffix('.txt')
-
-
-def file_regex_to_regex(line):
-    """
-    Examples
-    --------
-    #TODO misto toho tady dat nejakou estu k testovacim datum
-    >>> get_file_regex("/home/kali/Desktop/JetBrains/PyCharm/passwordList/rsc/data/edited/dr7_users/md5:pass.txt")
-    '.*{}:.*'
-    >>> get_file_regex("/edited/dr7_users/test:pass.txt")
-    'test:.*'
-    >>> get_file_regex("nic_nemenit")
-    'nic_nemenit'
-    """
-    line = line.rstrip('\n')
-    regex = ""
-    file_regex = get_file_regex(line)
-    logging.debug(line, " ", line.split('/')[-1].rstrip('\n').removesuffix(".txt"))  # TODO others formats
-    while file_regex != "":
-        if getregex(file_regex.split(SEP)[0]) is None:
-            print(file_regex)
-            logging.error(line.rstrip('\n'), "has not known key", file_regex.split(SEP)[0])
-            file_regex = ""
-            continue
-        regex += SEP + getregex(file_regex.split(SEP)[0])
-        file_regex = file_regex[len(file_regex.split(SEP)[0]):]  # TODO not only
-        file_regex = file_regex.lstrip(SEP)
-    return regex.lstrip(SEP)
-
-
-def control_file_regex(input_stream):
-    """
-    Control if in file stream are valid regexes from file name
-    #TODO do test with test data
-    """
+#  control file list has valid to regexes from file name
+def control_file_list_file_regex(input_stream, patch=None):
     for line in input_stream:
         regex = file_regex_to_regex(line)
-        check_file_with_regex(line, '^' + regex + SEP + '?$')
+        control_file_regex(line, '^' + regex + SEP + '?$', patch)
 
 
-def link_colmun(input_stream, key) -> None:
+def link_colmun(file_list, out_file_r) -> None:
     """
     get value of key from stream and print them to stdout
     TODO dodelat linkovani přes vice casti regexu promenych
     """
 
-    logging.debug("Linking from key {key}")
+    log_file = LogFile(os.path.abspath(f"{LINKED_FOLDER}/linkedList.json"))
+    unique_id = log_file.new(args=sys.argv)
+
     empty = 0
+    err = set({})
+    status = "succesful"
 
-    # zjistit jestli tam nejaky soubor neni vycrat, kdyztak zahlasit warning a amazat ho
-    #zjistit kam ukladat linkedList.json, zalozit pokud neexistuje
+    # TODO problem with
 
-    file_path = os.path.join(LINKED_FOLDER, "linkedList.json")
-
-    data = {
-        "start_time": datetime.now(),
-        "input_args": sys.argv,
-        "progress": {
-            "status": "started",
-            "errors": []
-        }
-    }
-
-    with open(file_path, "w+") as outfile:
-        json.dump(data, outfile, indent=4)
-
-    #TODO open linkedList.json, add lined process with progress and start time
-    # succesfull,, trvani, input args, tabulka pruniku,
-    # nektere veci nedalat, pokud neni potraba
-
-    for line in input_stream:
-        line = line.rstrip('\n')
+    for file_path in set(file_list):  # open file ,remove duplicates
         try:
-            index = get_file_regex(line).split(SEP).index(key)
-            #zjednodujit pokud jde
-            with open(line, 'r') as file:
-                for line2 in file:
-                    parts = line2.strip().split(SEP)
-                    if parts[index] == "":
-                        empty += 1
-                    else:
-                        print(parts[index])
-        except IndexError:
-            logging.error(f"Index Error: {file}")
+            with open(file_path.rstrip('\n'), 'r') as file:
+                for in_line in file:
+
+                    keys = get_file_regex(file_path).split(SEP)
+                    values = in_line.strip().split(SEP)
+                    in_dict = dict(zip(keys, values))
+                    out_dict = {key: "" for key in get_file_regex(out_file_r).split(SEP)}
+
+                    try:
+                        for out_key in get_file_regex(out_file_r).split(SEP):
+                            if out_dict[out_key] != "":
+                                logging.error(f"Rewrite error: {out_dict[out_key]}-->{in_dict[out_key]}")
+                            out_dict[out_key] = in_dict[out_key]
+                    except KeyError:
+                        pass
+                        #logging.error(f"Index Error: {file} {e} {index} {parts}")
+                    print(SEP.join(list(out_dict.values())))
         except FileNotFoundError:
-            #save error
-            logging.error(f" File '{line}' not found.")
+            logging.error(f" File '{file_path}' not found.")
+            err.add(f"FileNotFoundError {file_path}")
         except ValueError as e:
-            logging.error(f"ERROR: Value error {e}  {line}")
-    #zapsat do jsonu dokonceno, zapsat cas
-    logging.warning(f"ERROR: {empty} empty lines")
+            logging.error(f"ERROR: Value error {e}  {file_path}")
+    log_file.update(unique_id, "stoptime", now_string())
+    log_file.update(unique_id, ["progress", "status"], status)
+    log_file.update(unique_id, ["progress", "errors"], list(err))
+
+    logging.warning(f"ERROR: {empty} empty lines") if empty != 0 else None
 
 
-def file_regex(input_stream):
-    """
-    Print list of file_regexes from file list to stdout
-    >>> file_regex(["pass:sha1.txt","pass:md5.txt"])
-    .*?:.{40}
-    .*?:.{32}
-    """
-    for line in input_stream:
-        print(file_regex_to_regex(line))
+def print_help():
+    print(
+        """
+        --file_regex : transfer list (in stdin) of files to file_regex list 
+        --control : check if each file in file list (in stdin) has valid file data (from his file_regex)
+            -p for generate patch
+        --link : link data from file list with file regex -> stdout
+        """
+    )
 
-import argparse
+
 if __name__ == "__main__":
-    """
-        --file_regex tranfer list (in stdin) of files to file_regex list 
-        --control check if each file in file list (in stdin) has valid for file data (from his file_regex)
-        --link link data from file list with file regex -> stdout
-    """
-
     if len(sys.argv) < 2:
-        help()
+        print_help()
         sys.exit(0)
     if sys.argv[1] == "file_regex":
-        file_regex(sys.stdin)
+        print_file_regex(sys.stdin)
         sys.exit(0)
     if sys.argv[1] == "control":
-        control_file_regex(sys.stdin)
+        if (len(sys.argv) > 2) and (sys.argv[2] == "-p"):
+            control_file_list_file_regex(sys.stdin, patch=True)
+        control_file_list_file_regex(sys.stdin)
+    if sys.argv[1] == "patch":
+        #FIXME sed not working for texts with //
+        with (open(PATCH_FILE, 'r') as patch_file):
+            for line in patch_file:
+
+                r = re.search(r"([^']*?'){2}\t(.*)\t\|(.*)", line)
+                if r is None:
+                    print("r is NOne", line)
+                    continue
+                old = r.group(2)
+                new = r.group(3)
+
+                path = re.search(r"(.*?)\t", line).group(1)
+                if new != "" and new != " ":
+                    # FIXME /DELETE nici, ale nechava prazdne radky
+                    if "/DELETE" == new:
+                        new = ""
+                    command = ['sed', '-i', f"s/^{old}/{new}/m", f"{path}"]
+                    print(' '.join(command))
+                    subprocess.run(command, check=True)
     if sys.argv[1] == "link":
-        if len(sys.argv) < 3 or getregex(sys.argv[2]) is None:
+        if len(sys.argv) < 3:
             logging.critical("Use: python3 passlist.py <file_regex> < \"file list\"")
             #EXAMPLE  python3 passlist.py link pass < <(echo "rsc/...../email:pass.txt")
         else:
-            link_colmun(sys.stdin, sys.argv[2])
+            link_colmun(sys.stdin, out_file_r=sys.argv[2])

@@ -5,9 +5,10 @@
 install:
 	apt install python3
 	apt install python3-pip
-	pip3 install -r requirements.txt #TODO pridat python knihovny potřebne pro telegram bota
+	pip3 install -r requirements.txt
+	#TODO pridat python knihovny potřebne pro telegram bota
 	#TODO zkontrolovat, ze se vytvori output slozky
-venv: #FIXME zkontrolovat venv na stáhnutí vsech zacislosti
+venv: #FIXME zkontrolovat venv na stáhnutí vsech zavislosti
 	python -m venv venv
 	#source ./venv/bin/activate
 	which python
@@ -22,3 +23,6 @@ save_requirements: #tun WITOUT SUDO !!!! (jiank se to spusti v globalnim pythonu
 clean_venv:
 	#deactivate
 	rm -rf ./venv
+
+test_all:
+	pytest -s ./lib/test/

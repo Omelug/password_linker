@@ -1,0 +1,14 @@
+Jednoducha analyza substringu v textu
+python2 charfreq.py ../../linkedLists/pass.txt
+
+
+
+./pipal.rb -v ../linkedLists/pass.txt
+
+lykan -v ../linkedLists/pass.txt
+
+
+cewl -d 2 -m 5 -w wordlist.txt http://<target website>
+
+hashcat --hash-type 0  ./linkedLists/md5.txt ./extended_tools/output/cewl_stacilo.txt -O -o ./test.txt -r ./script/crack/hashcat-rule/clem9669_medium.rule
+

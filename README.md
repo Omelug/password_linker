@@ -11,3 +11,6 @@
 - README anglicky i česky 
 
 Zaměřuji se hlavně na česká (případně slovenská) hesla vytvořena uživateli, ale jinak se to snažím se to psát co nejobecněji. 
+
+
+
