@@ -70,14 +70,10 @@ def date_to_string(f_date: float):
 
 #TODO unit test
 def download_with_wget(url, output_directory):
-    """
-    1 backup remove old downloaded file
-    TODO asi nezalohovat nic
-    """
     try:
-        subprocess.run(['wget', url, '--backups=1 -P', output_directory], check=True)
+        subprocess.run(['wget', '-O', output_directory, url], check=True)
         logging.info(f"{url} downloaded successful!")
-        return True
+        return True #FIXME for testing, return True
     except Exception as e:
         logging.error("Error downloading file:", e)
         return False

@@ -111,6 +111,7 @@ async def save_all_after(channel, after, max=10000, offset_id=0):
             if message.date.replace(tzinfo=None) <= after:
                 print(f"Time end, last_time will be saved")
                 end = True
+                break
             if message.message is None:
                 print(f"message is {message}", file=sys.stderr)
                 continue
