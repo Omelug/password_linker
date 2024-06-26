@@ -26,3 +26,23 @@ clean_venv:
 
 test_all:
 	pytest -s ./lib/test/
+
+USERNAME = root
+SERVER = 45.134.226.157
+DEST_DIR = /root/passwordList/TelegramChecker
+FILES = ./TelegramChecker/breachdetector ./TelegramChecker/user_config.py
+
+breachdetector_pull:
+	echo "Copying files to server..."
+	scp -r $(FILES) $(USERNAME)@$(SERVER):$(DEST_DIR)
+	echo "Files copied successfully to $(USERNAME)@$(SERVER):$(DEST_DIR)"
+
+
+DEST_DIR = /root/passwordList
+FILES = ./lib
+lib_pull:
+	echo "Copying files to server..."
+	scp -r $(FILES) $(USERNAME)@$(SERVER):$(DEST_DIR)
+	echo "Files copied successfully to $(USERNAME)@$(SERVER):$(DEST_DIR)"
+
+

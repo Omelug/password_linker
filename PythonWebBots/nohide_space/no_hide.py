@@ -10,6 +10,8 @@ from selenium.common.exceptions import NoSuchElementException
 import re
 import sys
 import sqlite3
+from sqlalchemy import create_engine, text
+from sqlalchemy.orm import sessionmaker
 
 lib_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), '../..')
 sys.path.append(lib_dir)
@@ -23,55 +25,45 @@ logging.basicConfig(level=logging.INFO,
 option_file = "options.json"
 SITE_NAME = "nohide-space"
 DB_FILE = "no_hide.db"
+save_mode = {"A": "all", "C": "combo", "F": "fake", "N": "nothing", "S": "separated"}
 
+engine = create_engine(DB_FILE)
+Session = sessionmaker(bind=engine)
 
 def db_init():
-    conn = sqlite3.connect(DB_FILE)
-    cursor = conn.cursor()
-    cursor.execute('''CREATE TABLE IF NOT EXISTS POSTS (
-                        link TEXT PRIMARY KEY,
-                        date TEXT,
-                        get_date TEXT
-                    )''')
-
-    cursor.execute('''CREATE TABLE IF NOT EXISTS LINKS (
+    with Session() as session:
+        session.execute('''CREATE TABLE IF NOT EXISTS POSTS (
                             link TEXT PRIMARY KEY,
-                            post_link TEXT,
-                            save_mode TEXT,
-                            author TEXT,
-                            sort_date TEXT,
-                            download_date TEXT,
-                            download_path TEST
+                            date TEXT,
+                            get_date TEXT
                         )''')
-
-    conn.commit()
-    conn.close()
-
+        session.execute('''CREATE TABLE IF NOT EXISTS LINKS (
+                                link TEXT PRIMARY KEY,
+                                post_link TEXT,
+                                save_mode TEXT,
+                                author TEXT,
+                                sort_date TEXT,
+                                download_date TEXT,
+                                download_path TEST
+                            )''')
+        session.commit()
 
 def insert_post(link, date):
-    conn = sqlite3.connect(DB_FILE)
-    cursor = conn.cursor()
+    with Session() as session:
+        session.execute('''INSERT OR IGNORE INTO POSTS (link, date, get_date)
+                          VALUES (?,?, ?)''', (link, date, now_string()))
 
-    cursor.execute('''INSERT OR IGNORE INTO POSTS (link, date, get_date)
-                      VALUES (?,?, ?)''', (link, date, now_string()))
-
-    inserted = cursor.rowcount > 0
-
-    conn.commit()
-    conn.close()
+        inserted = session.rowcount > 0
+        session.commit()
     return inserted
 
 def insert_link_to_db(post_info, link, save_mode):
-    conn = sqlite3.connect(DB_FILE)
-    cursor = conn.cursor()
     author, post_link = post_info
-    cursor.execute('''INSERT OR IGNORE INTO LINKS (link, save_mode, author, post_link, sort_date)
-                      VALUES (?,?,?,?,?)''', (link, save_mode, author, post_link, now_string()))
-
-    inserted = cursor.rowcount > 0
-
-    conn.commit()
-    conn.close()
+    with Session() as session:
+        session.execute('''INSERT OR IGNORE INTO LINKS (link, save_mode, author, post_link, sort_date)
+                          VALUES (?,?,?,?,?)''', (link, save_mode, author, post_link, now_string()))
+        inserted = session.rowcount > 0
+        session.commit()
     return inserted
 
 
@@ -80,45 +72,35 @@ def insert_links_to_db(post_info, links, save_mode):
         insert_link_to_db(post_info, link.get_attribute("href"), save_mode)
 
 def all_items_in_list_in_db(links):
-    conn = sqlite3.connect(DB_FILE)
-    cursor = conn.cursor()
     links_set = set(links)
-
     placeholders = ','.join('?' * len(links_set))
-    cursor.execute(f'SELECT link FROM LINKS WHERE link IN ({placeholders})', tuple(links_set))
-    rows = cursor.fetchall()
-    conn.close()
+    with Session() as session:
+        result = session.execute(f'SELECT link FROM LINKS WHERE link IN ({placeholders})', tuple(links_set))
+        rows = result.fetchall()
     return links_set.issubset({row[0] for row in rows})
 
 def get_links():
-    conn = sqlite3.connect(DB_FILE)
-    cursor = conn.cursor()
-
-    cursor.execute('SELECT link FROM POSTS')
-    rows = cursor.fetchall()
-    links = {row[0] for row in rows}
-
-    conn.close()
+    with Session() as session:
+        link_from_posts = session.execute('SELECT link FROM POSTS')
+        rows = link_from_posts.fetchall()
+        links = {row[0] for row in rows}
     return links
 
 def get_not_down_links():
-    conn = sqlite3.connect(DB_FILE)
-    cursor = conn.cursor()
-    cursor.execute('SELECT * FROM LINKS WHERE download_date is NULL')
-    rows = cursor.fetchall()
-    down_links = {row for row in rows}
-    conn.close()
+    with Session() as session:
+        links_sql =session.execute('SELECT * FROM LINKS WHERE download_date is NULL')
+        rows = links_sql.fetchall()
+        down_links = {row for row in rows}
     return down_links
+
 def update_download_info(link, download_date, download_path):
-    conn = sqlite3.connect(DB_FILE)
-    cursor = conn.cursor()
-    cursor.execute('''
-                UPDATE LINKS
-                SET download_date = ?, download_path = ?
-                WHERE link = ?
-            ''', (download_date, download_path, link))
-    conn.commit()
-    conn.close()
+    with Session() as session:
+        session.execute('''
+                    UPDATE LINKS
+                    SET download_date = ?, download_path = ?
+                    WHERE link = ?
+                ''', (download_date, download_path, link))
+        session.commit()
 
 def get_new_posts() -> bool:  # succes?
     while True:
@@ -161,19 +143,18 @@ def get_link_from_posts():
                 continue
 
             while True:
-                inp = input("Save: [A]ll, To [C]ombo list, [F]ake, [N]othing, number separated with S,,,, :")
-                ab = {"A": "all", "C": "combo", "F": "fake", "N": "nothing","S": "separated"}
+                in_save = input("Save: [A]ll, To [C]ombo list, [F]ake, [N]othing, number separated with S,,,, :")
                 post_info = (author, post_link.strip())
 
                 try:
-                    if 'S' not in inp:
+                    if 'S' not in in_save:
                         for link in flist:
-                            insert_link_to_db(post_info, link, ab[inp])
+                            insert_link_to_db(post_info, link, save_mode[in_save])
                     else:
-                        indexes = list(map(int, inp[1].split(",")))
+                        indexes = list(map(int, in_save[1].split(",")))
                         for index, link in enumerate(data_links):
                             if index in indexes:
-                                insert_link_to_db(post_info, link.get_attribute("href"), ab["S"])
+                                insert_link_to_db(post_info, link.get_attribute("href"), save_mode["S"])
                     break
                 except KeyError:
                     logging.warning(f"Invalid input value")
@@ -233,7 +214,6 @@ def download_files(driver):
 
 
 def cloudfare_wait_checkbox(driver):
-    # https://stackoverflow.com/questions/76575298/how-to-click-on-verify-you-are-human-checkbox-challenge-by-cloudflare-using-se
     time.sleep(5)
     WebDriverWait(driver, 20).until(EC.frame_to_be_available_and_switch_to_it(
         (By.CSS_SELECTOR, "iframe[title='Widget containing a Cloudflare security challenge']")))

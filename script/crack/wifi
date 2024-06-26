@@ -1,1 +1,1 @@
-aircrack-ng ./hs/handshake_Internet6F21_8C-59-73-AF-6F-21_2024-01-15T13-10-49.cap -w '/home/kali/PycharmProjects/passwordList/rsc/breach_BC_1_CZ/original/only_pass.txt'
+aircrack-ng ./hs/handshake_Panysmrd_12-49-8A-40-72-C4_2024-06-03T14-28-02.cap -w '/home/kali/PycharmProjects/passwordList/rsc/breach_BC_1_CZ/original/only_pass.txt'

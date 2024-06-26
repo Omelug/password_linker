@@ -45,10 +45,10 @@ def control_file_list_file_regex(input_stream, patch=None):
         control_file_regex(line, '^' + regex + SEP + '?$', patch)
 
 
-def link_colmun(file_list, out_file_r) -> None:
+def link_column(file_list, out_file_r) -> None:
     """
     get value of key from stream and print them to stdout
-    TODO dodelat linkovani přes vice casti regexu promenych
+    TODO unit  přes vice casti regexu promenych
     """
 
     log_file = LogFile(os.path.abspath(f"{LINKED_FOLDER}/linkedList.json"))
@@ -57,8 +57,6 @@ def link_colmun(file_list, out_file_r) -> None:
     empty = 0
     err = set({})
     status = "succesful"
-
-    # TODO problem with
 
     for file_path in set(file_list):  # open file ,remove duplicates
         try:
@@ -138,4 +136,4 @@ if __name__ == "__main__":
             logging.critical("Use: python3 passlist.py <file_regex> < \"file list\"")
             #EXAMPLE  python3 passlist.py link pass < <(echo "rsc/...../email:pass.txt")
         else:
-            link_colmun(sys.stdin, out_file_r=sys.argv[2])
+            link_column(sys.stdin, out_file_r=sys.argv[2])

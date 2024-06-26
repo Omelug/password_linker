@@ -1,0 +1,1 @@
+python3 TelegramChecker/breachdetector/breachdetector.py
