@@ -20,29 +20,19 @@
         </library>
       </libraries>
     </data-source>
-    <data-source source="LOCAL" name="test" uuid="16fa772a-19a1-4a8f-a246-8985c96017ce">
+    <data-source source="LOCAL" name="breachdetector result.db" uuid="9c6c5775-eaf2-4847-a1fc-bf5b9d6aabb0">
       <driver-ref>sqlite.xerial</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
-      <jdbc-url>jdbc:sqlite:$PROJECT_DIR$/rsc/test.db</jdbc-url>
+      <jdbc-url>jdbc:sqlite:$PROJECT_DIR$/TelegramChecker/breachdetector/breachdetector.db</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
-      <libraries>
-        <library>
-          <url>file://$APPLICATION_CONFIG_DIR$/jdbc-drivers/Xerial SQLiteJDBC/3.43.0/org/xerial/sqlite-jdbc/3.43.0.0/sqlite-jdbc-3.43.0.0.jar</url>
-        </library>
-      </libraries>
     </data-source>
-    <data-source source="LOCAL" name="awda" uuid="1847c414-c6f8-41fe-91a0-f7d35607a387">
+    <data-source source="LOCAL" name="no_hide.db" uuid="e8915eaa-8f4d-483d-9edd-cc9aa1e54869">
       <driver-ref>sqlite.xerial</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
-      <jdbc-url>jdbc:sqlite:$PROJECT_DIR$/rsc/awda.db</jdbc-url>
+      <jdbc-url>jdbc:sqlite:$PROJECT_DIR$/PythonWebBots/nohide_space/no_hide.db</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
-      <libraries>
-        <library>
-          <url>file://$APPLICATION_CONFIG_DIR$/jdbc-drivers/Xerial SQLiteJDBC/3.43.0/org/xerial/sqlite-jdbc/3.43.0.0/sqlite-jdbc-3.43.0.0.jar</url>
-        </library>
-      </libraries>
     </data-source>
   </component>
 </project>

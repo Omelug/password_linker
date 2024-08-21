@@ -4,9 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="08a8aebd-615c-479e-80cf-80a36b1f6f35" name="Changes" comment="giignore">
-      <change afterPath="$PROJECT_DIR$/PythonWebBots/Makefile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PythonWebBots/requirements.txt" afterDir="false" />
+    <list default="true" id="08a8aebd-615c-479e-80cf-80a36b1f6f35" name="Changes" comment="breachdetector better REGEX">
+      <change afterPath="$PROJECT_DIR$/python_pass_web_bots/nohide_space/database.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/python_pass_web_bots/nohide_space/no_hide_cloufare.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/python_pass_web_bots/setup.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/python_pass_web_bots/web/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/python_pass_web_bots/web/user_agent.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
@@ -14,12 +17,58 @@
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/1847c414-c6f8-41fe-91a0-f7d35607a387.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/74636f5c-6336-4444-877b-064f0567d568.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/74636f5c-6336-4444-877b-064f0567d568.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/7ffe65c5-63dd-4846-81ab-277dc0c61ad6.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/7ffe65c5-63dd-4846-81ab-277dc0c61ad6.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/passwordList.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/passwordList.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PythonWebBots/nohide_space/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/PythonWebBots/nohide_space/no_hide.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PythonWebBots/tests/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/PythonWebBots/nohide_space/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TelegramChecker/breachdetector/breachdetector.py" beforeDir="false" afterPath="$PROJECT_DIR$/TelegramChecker/breachdetector/breachdetector.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PythonWebBots/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/python_pass_web_bots/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PythonWebBots/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/python_pass_web_bots/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PythonWebBots/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/python_pass_web_bots/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PythonWebBots/docs/Makefile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PythonWebBots/docs/_build/doctrees/environment.pickle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PythonWebBots/docs/_build/doctrees/index.doctree" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PythonWebBots/docs/_build/doctrees/main.doctree" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PythonWebBots/docs/_build/doctrees/modules.doctree" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PythonWebBots/docs/_build/html/.buildinfo" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PythonWebBots/docs/_build/html/_sources/index.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PythonWebBots/docs/_build/html/_sources/main.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PythonWebBots/docs/_build/html/_sources/modules.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PythonWebBots/docs/_build/html/_static/alabaster.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PythonWebBots/docs/_build/html/_static/basic.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PythonWebBots/docs/_build/html/_static/custom.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PythonWebBots/docs/_build/html/_static/doctools.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PythonWebBots/docs/_build/html/_static/documentation_options.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PythonWebBots/docs/_build/html/_static/file.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PythonWebBots/docs/_build/html/_static/groundwork.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PythonWebBots/docs/_build/html/_static/gw_logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PythonWebBots/docs/_build/html/_static/language_data.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PythonWebBots/docs/_build/html/_static/minus.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PythonWebBots/docs/_build/html/_static/plus.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PythonWebBots/docs/_build/html/_static/pygments.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PythonWebBots/docs/_build/html/_static/searchtools.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PythonWebBots/docs/_build/html/_static/small_groundwork.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PythonWebBots/docs/_build/html/_static/sphinx_highlight.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PythonWebBots/docs/_build/html/genindex.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PythonWebBots/docs/_build/html/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PythonWebBots/docs/_build/html/main.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PythonWebBots/docs/_build/html/modules.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PythonWebBots/docs/_build/html/objects.inv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PythonWebBots/docs/_build/html/search.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PythonWebBots/docs/_build/html/searchindex.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PythonWebBots/docs/commands.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PythonWebBots/docs/conf.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PythonWebBots/docs/index.rst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PythonWebBots/docs/main.rst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PythonWebBots/docs/make.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PythonWebBots/docs/modules.rst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PythonWebBots/nohide_space/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/python_pass_web_bots/nohide_space/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PythonWebBots/nohide_space/no_hide.py" beforeDir="false" afterPath="$PROJECT_DIR$/python_pass_web_bots/nohide_space/no_hide.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PythonWebBots/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/python_pass_web_bots/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TelegramChecker/breachdetector/breachdetector.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TelegramChecker/breachdetector/requirements.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TelegramChecker/breachdetector/test.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TelegramChecker/direct_downloader/downloader.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/TelegramChecker/regex_checker/anon.session" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/file_format.py" beforeDir="false" afterPath="$PROJECT_DIR$/lib/file_format.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TelegramChecker/user_config.py.bak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bot.txt" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,6 +132,14 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProblemsViewState">
+    <hideBySeverity>
+      <option value="11" />
+      <option value="12" />
+      <option value="13" />
+      <option value="14" />
+      <option value="15" />
+      <option value="16" />
+    </hideBySeverity>
     <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
@@ -94,48 +151,50 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultPlantUmlFileTemplate": "UML Use Case",
-    "Python tests.pytest for file_format_test.TestLoadConfig.test_load_config_file_not_found.executor": "Run",
-    "Python tests.pytest for logfile_test.LogFileNew.executor": "Run",
-    "Python tests.pytest for logfile_test.LogFileNew.test_empty.executor": "Run",
-    "Python tests.pytest for logfile_test.TestCreateFileIfNotExist.test_init.executor": "Run",
-    "Python tests.pytest for logfile_test.TestCreateFileIfNotExist.test_new.executor": "Run",
-    "Python tests.pytest for logfile_test.TestLogFileInit.test_init.executor": "Run",
-    "Python tests.pytest for logfile_test.TestLogFileInit.test_init_invalid.executor": "Run",
-    "Python tests.pytest for logfile_test.TestLogFileNew.test_empty.executor": "Run",
-    "Python tests.pytest for logfile_test.TestLogFileNew.test_empty_no_args.executor": "Run",
-    "Python tests.pytest for logfile_test.TestLogFileUpdate.test_update.executor": "Run",
-    "Python tests.pytest for unit_test.TestCreateFileIfNotExist.executor": "Run",
-    "Python tests.pytest for unit_test.TestCreateFileIfNotExist.test_create_file_if_not_exists.executor": "Run",
-    "Python tests.pytest in logfile_test.py.executor": "Run",
-    "Python tests.pytest in unit_test.py.executor": "Run",
-    "Python.lister.executor": "Debug",
-    "Python.main.executor": "Run",
-    "Python.passlist.executor": "Run",
-    "Python.test.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "database.data.extractors.current.export.id": "Pipe-separated_id",
-    "database.data.extractors.current.id": "Pipe-separated_id",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "/home/kali/Desktop/JetBrains/PyCharm/passwordList/PythonWebBots",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultPlantUmlFileTemplate&quot;: &quot;UML Use Case&quot;,
+    &quot;Makefile Target.breachdetector_pull.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.pytest for file_format_test.TestLoadConfig.test_load_config_file_not_found.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.pytest for logfile_test.LogFileNew.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.pytest for logfile_test.LogFileNew.test_empty.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.pytest for logfile_test.TestCreateFileIfNotExist.test_init.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.pytest for logfile_test.TestCreateFileIfNotExist.test_new.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.pytest for logfile_test.TestLogFileInit.test_init.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.pytest for logfile_test.TestLogFileInit.test_init_invalid.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.pytest for logfile_test.TestLogFileNew.test_empty.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.pytest for logfile_test.TestLogFileNew.test_empty_no_args.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.pytest for logfile_test.TestLogFileUpdate.test_update.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.pytest for unit_test.TestCreateFileIfNotExist.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.pytest for unit_test.TestCreateFileIfNotExist.test_create_file_if_not_exists.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.pytest in logfile_test.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.pytest in unit_test.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python.lister.executor&quot;: &quot;Debug&quot;,
+    &quot;Python.main.executor&quot;: &quot;Run&quot;,
+    &quot;Python.passlist.executor&quot;: &quot;Run&quot;,
+    &quot;Python.test.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;ToolWindowTerminal.ShowToolbar&quot;: &quot;false&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;database.data.extractors.current.export.id&quot;: &quot;Pipe-separated_id&quot;,
+    &quot;database.data.extractors.current.id&quot;: &quot;Pipe-separated_id&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/kali/Desktop/JetBrains/PyCharm/passwordList/PythonWebBots&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "sqlite"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;sqlite&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/PythonWebBots" />
@@ -145,14 +204,20 @@
       <recent name="$PROJECT_DIR$" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/depreced" />
+      <recent name="$PROJECT_DIR$/TelegramChecker/breachdetector" />
       <recent name="$PROJECT_DIR$/lib/set_sh" />
       <recent name="$PROJECT_DIR$/PythonWebBots/tests" />
       <recent name="$PROJECT_DIR$/extended_tools/output" />
-      <recent name="$PROJECT_DIR$/lib" />
-      <recent name="$PROJECT_DIR$/test/stary_bordel" />
     </key>
   </component>
-  <component name="RunManager" selected="Python tests.pytest for file_format_test.TestLoadConfig.test_load_config_file_not_found">
+  <component name="RunManager" selected="Makefile Target.breachdetector_pull">
+    <configuration name="breachdetector_pull" type="MAKEFILE_TARGET_RUN_CONFIGURATION" factoryName="Makefile" temporary="true">
+      <makefile filename="$PROJECT_DIR$/Makefile" target="breachdetector_pull" workingDirectory="" arguments="">
+        <envs />
+      </makefile>
+      <method v="2" />
+    </configuration>
     <configuration name="lister" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="passwordList" />
       <option name="ENV_FILES" value="" />
@@ -258,24 +323,6 @@
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="pytest for logfile_test.LogFileNew.test_empty" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
-      <module name="passwordList" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/lib/test" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="_new_keywords" value="&quot;&quot;" />
-      <option name="_new_parameters" value="&quot;&quot;" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;logfile_test.LogFileNew.test_empty&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-      <method v="2" />
-    </configuration>
     <configuration name="pytest in logfile_test.py" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
       <module name="passwordList" />
       <option name="ENV_FILES" value="" />
@@ -295,29 +342,29 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="Makefile Target.breachdetector_pull" />
       <item itemvalue="Python.lister" />
       <item itemvalue="Python.main" />
       <item itemvalue="Python.test" />
       <item itemvalue="Python tests.pytest for file_format_test.TestLoadConfig.test_load_config_file_not_found" />
       <item itemvalue="Python tests.pytest for logfile_test.LogFileNew" />
-      <item itemvalue="Python tests.pytest for logfile_test.LogFileNew.test_empty" />
       <item itemvalue="Python tests.pytest in logfile_test.py" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Makefile Target.breachdetector_pull" />
         <item itemvalue="Python tests.pytest for file_format_test.TestLoadConfig.test_load_config_file_not_found" />
         <item itemvalue="Python.test" />
         <item itemvalue="Python tests.pytest in logfile_test.py" />
         <item itemvalue="Python tests.pytest for logfile_test.LogFileNew" />
-        <item itemvalue="Python tests.pytest for logfile_test.LogFileNew.test_empty" />
       </list>
     </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-PY-241.17011.127" />
-        <option value="bundled-python-sdk-48aec45f0201-7e9c3bbb6e34-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-241.17011.127" />
+        <option value="bundled-js-predefined-d6986cc7102b-410509235cf1-JavaScript-PY-242.20224.347" />
+        <option value="bundled-python-sdk-c2d6afa66fbe-39cff9de6eef-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-242.20224.347" />
       </set>
     </attachedChunks>
   </component>
@@ -544,7 +591,51 @@
       <workItem from="1717186213798" duration="13000" />
       <workItem from="1717186232145" duration="35000" />
       <workItem from="1717234331021" duration="27300000" />
-      <workItem from="1717314459891" duration="43294000" />
+      <workItem from="1717314459891" duration="44065000" />
+      <workItem from="1717416901690" duration="2517000" />
+      <workItem from="1717419781283" duration="17819000" />
+      <workItem from="1717484862277" duration="4041000" />
+      <workItem from="1717509790579" duration="18000" />
+      <workItem from="1717524880595" duration="1285000" />
+      <workItem from="1717526675266" duration="3045000" />
+      <workItem from="1717584015766" duration="13642000" />
+      <workItem from="1717703423740" duration="42000" />
+      <workItem from="1717769298346" duration="56000" />
+      <workItem from="1717769369263" duration="22000" />
+      <workItem from="1718050118417" duration="1534000" />
+      <workItem from="1718094664139" duration="3944000" />
+      <workItem from="1718216997948" duration="32000" />
+      <workItem from="1718286302512" duration="500000" />
+      <workItem from="1718289809657" duration="2070000" />
+      <workItem from="1718298134031" duration="70000" />
+      <workItem from="1718356804332" duration="5852000" />
+      <workItem from="1718439149386" duration="759000" />
+      <workItem from="1718565100195" duration="601000" />
+      <workItem from="1718630705240" duration="21000" />
+      <workItem from="1718646512542" duration="26000" />
+      <workItem from="1719316352517" duration="335000" />
+      <workItem from="1719336770048" duration="153000" />
+      <workItem from="1719338038438" duration="340000" />
+      <workItem from="1719338903020" duration="726000" />
+      <workItem from="1719351113753" duration="28000" />
+      <workItem from="1719431710003" duration="6592000" />
+      <workItem from="1719468823852" duration="2053000" />
+      <workItem from="1719486275383" duration="1659000" />
+      <workItem from="1719500049834" duration="692000" />
+      <workItem from="1719510765777" duration="1135000" />
+      <workItem from="1719595736643" duration="621000" />
+      <workItem from="1720718317328" duration="3869000" />
+      <workItem from="1720784583238" duration="345000" />
+      <workItem from="1721330132153" duration="1996000" />
+      <workItem from="1721390004209" duration="234000" />
+      <workItem from="1721401683732" duration="2515000" />
+      <workItem from="1721460640969" duration="1059000" />
+      <workItem from="1722887358597" duration="716000" />
+      <workItem from="1722924532923" duration="14708000" />
+      <workItem from="1722945234839" duration="4000" />
+      <workItem from="1724082381933" duration="2146000" />
+      <workItem from="1724165740182" duration="452000" />
+      <workItem from="1724235730498" duration="1418000" />
     </task>
     <task id="LOCAL-00001" summary="scripts and resource database">
       <option name="closed" value="true" />
@@ -674,7 +765,23 @@
       <option name="project" value="LOCAL" />
       <updated>1717263185385</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="no_hide download">
+      <option name="closed" value="true" />
+      <created>1717414249604</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1717414249604</updated>
+    </task>
+    <task id="LOCAL-00018" summary="breachdetector better REGEX">
+      <option name="closed" value="true" />
+      <created>1719436897082</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1719436897082</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -744,7 +851,9 @@
     <MESSAGE value="nohide-space bude potrebovat projit poradne celej, kod je neprehlednej" />
     <MESSAGE value="breachdetector channel to database from last download" />
     <MESSAGE value="giignore" />
-    <option name="LAST_COMMIT_MESSAGE" value="giignore" />
+    <MESSAGE value="no_hide download" />
+    <MESSAGE value="breachdetector better REGEX" />
+    <option name="LAST_COMMIT_MESSAGE" value="breachdetector better REGEX" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

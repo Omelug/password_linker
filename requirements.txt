@@ -1,0 +1,10 @@
+blessings==1.7
+colorama==0.4.6
+colour-runner==0.1.1
+Pygments==2.17.2
+six==1.16.0
+pytest~=8.2.0
+Telethon~=1.35.0
+requests~=2.32.3
+selenium~=4.20.0
+SQLAlchemy~=2.0.30

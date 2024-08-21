@@ -1,17 +1,16 @@
 /linkedLists
 /rsc
+.idea
 /.idea
-
+venv
 /TelegramChecker/regex_checker/options.json
+/extended_tools
 
-/PythonWebBots/nohide_space/downloaded_files
-/PythonWebBots/nohide_space/no-space.png
-/PythonWebBots/nohide_space/nohide-space-message.txt
-
+/python_pass_web_bots/nohide_space/downloaded_files
+/python_pass_web_bots/nohide_space/no-space.png
+/python_pass_web_bots/nohide_space/nohide-space-message.txt
+/python_pass_web_bots/nohide_space/docs
 
 /test/stary_bordel
-/venv/
 /TelegramChecker/user_config.py
-/PythonWebBots/depraced_nohide_space/
 /TelegramChecker/Makefile
-/

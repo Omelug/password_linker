@@ -1,21 +1,27 @@
 import argparse
 import logging
 import os
+import random
+
+from selenium.webdriver.firefox.options import Options
+
+from database import *
 from selenium import webdriver
 from selenium.webdriver.common.by import By
-from selenium.webdriver.firefox.options import Options
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
-from selenium.common.exceptions import NoSuchElementException
+from selenium.common.exceptions import NoSuchElementException, TimeoutException
 import re
 import sys
-import sqlite3
 from sqlalchemy import create_engine, text
 from sqlalchemy.orm import sessionmaker
+from selenium_stealth import stealth
+import undetected_chromedriver as uc
 
 lib_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), '../..')
 sys.path.append(lib_dir)
 from lib.file_format import *
+from web.user_agent import user_agents
 
 logging.basicConfig(level=logging.INFO,
                     # filename="main.log",
@@ -24,83 +30,8 @@ logging.basicConfig(level=logging.INFO,
 
 option_file = "options.json"
 SITE_NAME = "nohide-space"
-DB_FILE = "no_hide.db"
+DB_FILE = "./no_hide.db"
 save_mode = {"A": "all", "C": "combo", "F": "fake", "N": "nothing", "S": "separated"}
-
-engine = create_engine(DB_FILE)
-Session = sessionmaker(bind=engine)
-
-def db_init():
-    with Session() as session:
-        session.execute('''CREATE TABLE IF NOT EXISTS POSTS (
-                            link TEXT PRIMARY KEY,
-                            date TEXT,
-                            get_date TEXT
-                        )''')
-        session.execute('''CREATE TABLE IF NOT EXISTS LINKS (
-                                link TEXT PRIMARY KEY,
-                                post_link TEXT,
-                                save_mode TEXT,
-                                author TEXT,
-                                sort_date TEXT,
-                                download_date TEXT,
-                                download_path TEST
-                            )''')
-        session.commit()
-
-def insert_post(link, date):
-    with Session() as session:
-        session.execute('''INSERT OR IGNORE INTO POSTS (link, date, get_date)
-                          VALUES (?,?, ?)''', (link, date, now_string()))
-
-        inserted = session.rowcount > 0
-        session.commit()
-    return inserted
-
-def insert_link_to_db(post_info, link, save_mode):
-    author, post_link = post_info
-    with Session() as session:
-        session.execute('''INSERT OR IGNORE INTO LINKS (link, save_mode, author, post_link, sort_date)
-                          VALUES (?,?,?,?,?)''', (link, save_mode, author, post_link, now_string()))
-        inserted = session.rowcount > 0
-        session.commit()
-    return inserted
-
-
-def insert_links_to_db(post_info, links, save_mode):
-    for link in links:
-        insert_link_to_db(post_info, link.get_attribute("href"), save_mode)
-
-def all_items_in_list_in_db(links):
-    links_set = set(links)
-    placeholders = ','.join('?' * len(links_set))
-    with Session() as session:
-        result = session.execute(f'SELECT link FROM LINKS WHERE link IN ({placeholders})', tuple(links_set))
-        rows = result.fetchall()
-    return links_set.issubset({row[0] for row in rows})
-
-def get_links():
-    with Session() as session:
-        link_from_posts = session.execute('SELECT link FROM POSTS')
-        rows = link_from_posts.fetchall()
-        links = {row[0] for row in rows}
-    return links
-
-def get_not_down_links():
-    with Session() as session:
-        links_sql =session.execute('SELECT * FROM LINKS WHERE download_date is NULL')
-        rows = links_sql.fetchall()
-        down_links = {row for row in rows}
-    return down_links
-
-def update_download_info(link, download_date, download_path):
-    with Session() as session:
-        session.execute('''
-                    UPDATE LINKS
-                    SET download_date = ?, download_path = ?
-                    WHERE link = ?
-                ''', (download_date, download_path, link))
-        session.commit()
 
 def get_new_posts() -> bool:  # succes?
     while True:
@@ -214,9 +145,18 @@ def download_files(driver):
 
 
 def cloudfare_wait_checkbox(driver):
-    time.sleep(5)
-    WebDriverWait(driver, 20).until(EC.frame_to_be_available_and_switch_to_it(
-        (By.CSS_SELECTOR, "iframe[title='Widget containing a Cloudflare security challenge']")))
+    time.sleep(15)
+    cloudflare_label = None
+    p = driver.find_elements(By.CSS_SELECTOR, "iframe")
+    print(p)
+    for i in range(10):
+        try:
+            cloudflare_label = WebDriverWait(driver, 10).until(EC.frame_to_be_available_and_switch_to_it(
+                (By.CSS_SELECTOR, "div")))
+            break
+        except TimeoutException:
+            logging.info("No iframe")
+    print(cloudflare_label)
     WebDriverWait(driver, 20).until(EC.element_to_be_clickable((By.CSS_SELECTOR, "label.cb-lb"))).click()
     time.sleep(5)
 
@@ -230,16 +170,44 @@ if __name__ == "__main__":
 
     args = parser.parse_args()
 
+    #Firefox
     options = Options()
-    options.set_preference("browser.download.folderList", 2)
-    options.set_preference("browser.download.manager.showWhenStarting", False)
-    options.set_preference("browser.download.dir", "./downloads")
-    options.set_preference("browser.helperApps.neverAsk.saveToDisk", "application/x-gzip")
+    
+    #options.set_preference("browser.download.folderList", 2)
+    #options.set_preference("browser.download.manager.showWhenStarting", False)
+    #options.set_preference("browser.download.dir", "./downloads")
+    #options.set_preference("browser.helperApps.neverAsk.saveToDisk", "application/x-gzip")
 
-    db_init()
+    ## Disable loading images for faster crawling
+    #options.add_argument('--blink-settings=imagesEnabled=false')
+    #options.add_argument(f'user-agent={random.choice(user_agents)}')
 
-    driver = webdriver.Firefox()
 
+    #driver = webdriver.Firefox(options=options)
+
+    driver = uc.Chrome(use_subprocess=False)
+
+    """Chrome from selenium.webdriver.chrome.options import Options
+
+    options = Options()
+    options.add_experimental_option("prefs", {
+        "download.default_directory": "./downloads",
+        "download.prompt_for_download": False,
+        "profile.default_content_settings.popups": 0,
+        "profile.content_settings.exceptions.automatic_downloads.*.setting": 1
+    })
+
+    # Disable loading images for faster crawling
+    options.add_argument('--blink-settings=imagesEnabled=false')
+    options.add_argument(f'user-agent={random.choice(user_agents)}')
+
+    driver = webdriver.Chrome(options=options)"""
+
+    driver.get("https://nohide.space/search/572982/?q=czech&o=date")
+    cloudfare_wait_checkbox(driver)
+    exit(42)
+
+    #TODO
     if args.get_new_post or args.get_links:
         driver.get("https://nohide.space/search/572982/?q=czech&o=date")
         cloudfare_wait_checkbox(driver)
