@@ -3,11 +3,12 @@
 
 
 install:
+	pip3 install git+https://github.com/Omelug/python_mini_modules.git#egg=input_parser
 	apt install python3
 	apt install python3-pip
 	pip3 install -r requirements.txt
-	#TODO pridat python knihovny potřebne pro telegram bota
 	#TODO zkontrolovat, ze se vytvori output slozky
+
 venv: #FIXME zkontrolovat venv na stáhnutí vsech zavislosti
 	python -m venv venv
 	#source ./venv/bin/activate
@@ -31,6 +32,7 @@ USERNAME = root
 SERVER = 45.134.226.157
 DEST_DIR = /root/passwordList/TelegramChecker
 FILES = ./TelegramChecker/breachdetector ./TelegramChecker/user_config.py
+
 
 breachdetector_pull:
 	echo "Copying files to server..."

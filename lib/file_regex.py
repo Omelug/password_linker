@@ -1,5 +1,5 @@
-SEP = ':'  # SEPARATOR
-
+from pass_config import CONFIG
+SEP = CONFIG['all']['separator']
 
 # get regex from key
 def get_regex(key) -> str | None:
@@ -23,9 +23,9 @@ def get_file_regex(filepath) -> str:
 
 
 #  file_path  -> regex
-def file_regex_to_regex(line) -> str:
+def file_regex_to_regex(file_path) -> str:
     regex = ""
-    file_regex = get_file_regex(line)
+    file_regex = get_file_regex(file_path)
     while file_regex != "":
         if get_regex(file_regex.split(SEP)[0]) is None:
             regex += SEP + file_regex.split(SEP)[0]
@@ -40,3 +40,13 @@ def file_regex_to_regex(line) -> str:
 def print_file_regex(input_stream):
     for line in input_stream:
         print(file_regex_to_regex(line))
+
+# get maximum file regex for all types in file list
+def get_max_file_regex(file_list):
+    unique_parts = set()
+    for file_path in set(file_list):
+        file_regex = get_file_regex(file_path)
+        parts = file_regex.split(SEP)
+        unique_parts.update(parts)
+    sorted_parts = sorted(unique_parts)
+    return SEP.join(sorted_parts)

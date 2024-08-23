@@ -1,0 +1,4 @@
+ahoj@email.cz:ahoj
+zdar@email.cz:zdar
+nazdar@email.cz:nazdar
+cus@email.cz:cus

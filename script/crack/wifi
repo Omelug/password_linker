@@ -1,1 +1,11 @@
+
+
+
 aircrack-ng ./hs/handshake_Panysmrd_12-49-8A-40-72-C4_2024-06-03T14-28-02.cap -w '/home/kali/PycharmProjects/passwordList/rsc/breach_BC_1_CZ/original/only_pass.txt'
+
+
+
+Convert all in folder into 2200:
+hcxpcapngtool -o hash.hc22000 *
+hashcat -m 22000 hash.hc22000 pass_count_no_hide_wifi.txt
+

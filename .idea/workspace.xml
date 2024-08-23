@@ -4,71 +4,45 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="08a8aebd-615c-479e-80cf-80a36b1f6f35" name="Changes" comment="breachdetector better REGEX">
-      <change afterPath="$PROJECT_DIR$/python_pass_web_bots/nohide_space/database.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python_pass_web_bots/nohide_space/no_hide_cloufare.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python_pass_web_bots/setup.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python_pass_web_bots/web/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python_pass_web_bots/web/user_agent.py" afterDir="false" />
+    <list default="true" id="08a8aebd-615c-479e-80cf-80a36b1f6f35" name="Changes" comment="bordel, zmatek, cloudafare se do to zase se... sejří">
+      <change afterPath="$PROJECT_DIR$/pass_config.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/python_pass_web_bots/web/driver_def.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/script/crack/hashcat-rule/rules" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/script/format/linker.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/script/repair/filter.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/scripts/filter/test1_CZECH_regex/command.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/scripts/filter/test1_CZECH_regex/data/email:pass.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/scripts/filter/test1_CZECH_regex/output.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/scripts/linker/test1_one_param_link/command.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/scripts/linker/test1_one_param_link/data/email:pass.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/scripts/linker/test1_one_param_link/data/pass.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/scripts/linker/test1_one_param_link/output.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/scripts/linker/test2_link_all/command.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/scripts/linker/test2_link_all/data/email:pass.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/scripts/linker/test2_link_all/data/pass:md5.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/scripts/linker/test2_link_all/output.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/scripts/linker/test3_link_all_auto/command.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/scripts/linker/test3_link_all_auto/data/email:pass.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/scripts/linker/test3_link_all_auto/data/pass:md5.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/scripts/linker/test3_link_all_auto/output.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/scripts/linker/test3_link_all_auto/result.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/scripts/linker_test.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/16fa772a-19a1-4a8f-a246-8985c96017ce.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/1847c414-c6f8-41fe-91a0-f7d35607a387.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/74636f5c-6336-4444-877b-064f0567d568.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/74636f5c-6336-4444-877b-064f0567d568.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/7ffe65c5-63dd-4846-81ab-277dc0c61ad6.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/7ffe65c5-63dd-4846-81ab-277dc0c61ad6.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/passwordList.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/passwordList.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PythonWebBots/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/python_pass_web_bots/Makefile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PythonWebBots/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/python_pass_web_bots/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PythonWebBots/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/python_pass_web_bots/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PythonWebBots/docs/Makefile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PythonWebBots/docs/_build/doctrees/environment.pickle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PythonWebBots/docs/_build/doctrees/index.doctree" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PythonWebBots/docs/_build/doctrees/main.doctree" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PythonWebBots/docs/_build/doctrees/modules.doctree" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PythonWebBots/docs/_build/html/.buildinfo" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PythonWebBots/docs/_build/html/_sources/index.rst.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PythonWebBots/docs/_build/html/_sources/main.rst.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PythonWebBots/docs/_build/html/_sources/modules.rst.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PythonWebBots/docs/_build/html/_static/alabaster.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PythonWebBots/docs/_build/html/_static/basic.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PythonWebBots/docs/_build/html/_static/custom.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PythonWebBots/docs/_build/html/_static/doctools.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PythonWebBots/docs/_build/html/_static/documentation_options.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PythonWebBots/docs/_build/html/_static/file.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PythonWebBots/docs/_build/html/_static/groundwork.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PythonWebBots/docs/_build/html/_static/gw_logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PythonWebBots/docs/_build/html/_static/language_data.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PythonWebBots/docs/_build/html/_static/minus.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PythonWebBots/docs/_build/html/_static/plus.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PythonWebBots/docs/_build/html/_static/pygments.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PythonWebBots/docs/_build/html/_static/searchtools.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PythonWebBots/docs/_build/html/_static/small_groundwork.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PythonWebBots/docs/_build/html/_static/sphinx_highlight.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PythonWebBots/docs/_build/html/genindex.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PythonWebBots/docs/_build/html/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PythonWebBots/docs/_build/html/main.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PythonWebBots/docs/_build/html/modules.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PythonWebBots/docs/_build/html/objects.inv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PythonWebBots/docs/_build/html/search.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PythonWebBots/docs/_build/html/searchindex.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PythonWebBots/docs/commands.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PythonWebBots/docs/conf.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PythonWebBots/docs/index.rst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PythonWebBots/docs/main.rst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PythonWebBots/docs/make.bat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PythonWebBots/docs/modules.rst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PythonWebBots/nohide_space/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/python_pass_web_bots/nohide_space/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PythonWebBots/nohide_space/no_hide.py" beforeDir="false" afterPath="$PROJECT_DIR$/python_pass_web_bots/nohide_space/no_hide.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PythonWebBots/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/python_pass_web_bots/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TelegramChecker/breachdetector/breachdetector.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TelegramChecker/breachdetector/requirements.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TelegramChecker/breachdetector/test.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TelegramChecker/direct_downloader/downloader.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TelegramChecker/regex_checker/anon.session" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TelegramChecker/user_config.py.bak" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bot.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/file_regex.py" beforeDir="false" afterPath="$PROJECT_DIR$/lib/file_regex.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/passlist.py" beforeDir="false" afterPath="$PROJECT_DIR$/pass_hub.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python_pass_web_bots/nohide_space/no_hide.py" beforeDir="false" afterPath="$PROJECT_DIR$/python_pass_web_bots/nohide_space/no_hide.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python_pass_web_bots/nohide_space/options.json" beforeDir="false" afterPath="$PROJECT_DIR$/python_pass_web_bots/nohide_space/options.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/script/crack/commands" beforeDir="false" afterPath="$PROJECT_DIR$/script/crack/commands" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/script/crack/hashcat-rule" beforeDir="false" afterPath="$PROJECT_DIR$/script/crack/hashcat-rule" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/script/crack/rules" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/script/crack/wifi" beforeDir="false" afterPath="$PROJECT_DIR$/script/crack/wifi" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/script/format/commands" beforeDir="false" afterPath="$PROJECT_DIR$/script/format/commands" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/script/format/pass_from_DB.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/script/one_info.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/MakeFile" beforeDir="false" afterPath="$PROJECT_DIR$/test/MakeFile" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -151,69 +125,78 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultPlantUmlFileTemplate&quot;: &quot;UML Use Case&quot;,
-    &quot;Makefile Target.breachdetector_pull.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.pytest for file_format_test.TestLoadConfig.test_load_config_file_not_found.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.pytest for logfile_test.LogFileNew.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.pytest for logfile_test.LogFileNew.test_empty.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.pytest for logfile_test.TestCreateFileIfNotExist.test_init.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.pytest for logfile_test.TestCreateFileIfNotExist.test_new.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.pytest for logfile_test.TestLogFileInit.test_init.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.pytest for logfile_test.TestLogFileInit.test_init_invalid.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.pytest for logfile_test.TestLogFileNew.test_empty.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.pytest for logfile_test.TestLogFileNew.test_empty_no_args.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.pytest for logfile_test.TestLogFileUpdate.test_update.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.pytest for unit_test.TestCreateFileIfNotExist.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.pytest for unit_test.TestCreateFileIfNotExist.test_create_file_if_not_exists.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.pytest in logfile_test.py.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.pytest in unit_test.py.executor&quot;: &quot;Run&quot;,
-    &quot;Python.lister.executor&quot;: &quot;Debug&quot;,
-    &quot;Python.main.executor&quot;: &quot;Run&quot;,
-    &quot;Python.passlist.executor&quot;: &quot;Run&quot;,
-    &quot;Python.test.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;ToolWindowTerminal.ShowToolbar&quot;: &quot;false&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;database.data.extractors.current.export.id&quot;: &quot;Pipe-separated_id&quot;,
-    &quot;database.data.extractors.current.id&quot;: &quot;Pipe-separated_id&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/kali/Desktop/JetBrains/PyCharm/passwordList/PythonWebBots&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultPlantUmlFileTemplate": "UML Use Case",
+    "Makefile Target.breachdetector_pull.executor": "Run",
+    "Makefile Target.run_tests.executor": "Run",
+    "Python tests.pytest for file_format_test.TestLoadConfig.test_load_config_file_not_found.executor": "Run",
+    "Python tests.pytest for logfile_test.LogFileNew.executor": "Run",
+    "Python tests.pytest for logfile_test.LogFileNew.test_empty.executor": "Run",
+    "Python tests.pytest for logfile_test.TestCreateFileIfNotExist.test_init.executor": "Run",
+    "Python tests.pytest for logfile_test.TestCreateFileIfNotExist.test_new.executor": "Run",
+    "Python tests.pytest for logfile_test.TestLogFileInit.test_init.executor": "Run",
+    "Python tests.pytest for logfile_test.TestLogFileInit.test_init_invalid.executor": "Run",
+    "Python tests.pytest for logfile_test.TestLogFileNew.test_empty.executor": "Run",
+    "Python tests.pytest for logfile_test.TestLogFileNew.test_empty_no_args.executor": "Run",
+    "Python tests.pytest for logfile_test.TestLogFileUpdate.test_update.executor": "Run",
+    "Python tests.pytest for pass_hub_test.TestFindScriptPath.executor": "Debug",
+    "Python tests.pytest for unit_test.TestCreateFileIfNotExist.executor": "Run",
+    "Python tests.pytest for unit_test.TestCreateFileIfNotExist.test_create_file_if_not_exists.executor": "Run",
+    "Python tests.pytest in logfile_test.py.executor": "Run",
+    "Python tests.pytest in pass_hub_test.py.executor": "Run",
+    "Python tests.pytest in unit_test.py.executor": "Run",
+    "Python.lister.executor": "Debug",
+    "Python.main.executor": "Run",
+    "Python.passlist.executor": "Run",
+    "Python.test.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "ToolWindowTerminal.ShowToolbar": "false",
+    "WebServerToolWindowFactoryState": "false",
+    "database.data.extractors.current.export.id": "Pipe-separated_id",
+    "database.data.extractors.current.id": "Pipe-separated_id",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "/home/kali/Desktop/JetBrains/PyCharm/passwordList/test/scripts/filter/test1_CZECH_regex",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;sqlite&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "sqlite"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/PythonWebBots" />
-      <recent name="$PROJECT_DIR$/TelegramChecker" />
-      <recent name="$PROJECT_DIR$/lib/test" />
-      <recent name="$PROJECT_DIR$/lib" />
-      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/test/scripts/filter/test1_CZECH_regex" />
+      <recent name="$PROJECT_DIR$/rsc/leakbase/original" />
+      <recent name="$PROJECT_DIR$/test/linker/test3_link_all_auto" />
+      <recent name="$PROJECT_DIR$/test/linker" />
+      <recent name="$PROJECT_DIR$/script/format" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/depreced" />
-      <recent name="$PROJECT_DIR$/TelegramChecker/breachdetector" />
-      <recent name="$PROJECT_DIR$/lib/set_sh" />
-      <recent name="$PROJECT_DIR$/PythonWebBots/tests" />
-      <recent name="$PROJECT_DIR$/extended_tools/output" />
+      <recent name="$PROJECT_DIR$/test/scripts/linker" />
+      <recent name="$PROJECT_DIR$/rsc/GGBestCombo/original" />
+      <recent name="$PROJECT_DIR$/rsc" />
+      <recent name="$PROJECT_DIR$/rsc/leakbase/original/GGBestCombo" />
+      <recent name="$PROJECT_DIR$/test/linker/test1/data" />
     </key>
   </component>
-  <component name="RunManager" selected="Makefile Target.breachdetector_pull">
+  <component name="RunManager" selected="Makefile Target.run_tests">
     <configuration name="breachdetector_pull" type="MAKEFILE_TARGET_RUN_CONFIGURATION" factoryName="Makefile" temporary="true">
       <makefile filename="$PROJECT_DIR$/Makefile" target="breachdetector_pull" workingDirectory="" arguments="">
+        <envs />
+      </makefile>
+      <method v="2" />
+    </configuration>
+    <configuration name="run_tests" type="MAKEFILE_TARGET_RUN_CONFIGURATION" factoryName="Makefile" temporary="true">
+      <makefile filename="$PROJECT_DIR$/test/MakeFile" target="run_tests" workingDirectory="" arguments="">
         <envs />
       </makefile>
       <method v="2" />
@@ -264,29 +247,6 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="passwordList" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/lib/test" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/lib/test/test.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <configuration name="pytest for file_format_test.TestLoadConfig.test_load_config_file_not_found" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
       <module name="passwordList" />
       <option name="ENV_FILES" value="" />
@@ -305,13 +265,13 @@
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="pytest for logfile_test.LogFileNew" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+    <configuration name="pytest for pass_hub_test.TestFindScriptPath" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
       <module name="passwordList" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/lib/test" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
@@ -319,17 +279,17 @@
       <option name="_new_keywords" value="&quot;&quot;" />
       <option name="_new_parameters" value="&quot;&quot;" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;logfile_test.LogFileNew&quot;" />
+      <option name="_new_target" value="&quot;pass_hub_test.TestFindScriptPath&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="pytest in logfile_test.py" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+    <configuration name="pytest in /home/kali/Desktop/JetBrains/PyCharm/passwordList/test/pass_hub_test.py" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
       <module name="passwordList" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/lib/test" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/.." />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
@@ -337,26 +297,26 @@
       <option name="_new_keywords" value="&quot;&quot;" />
       <option name="_new_parameters" value="&quot;&quot;" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;$PROJECT_DIR$/lib/test/logfile_test.py&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/test/pass_hub_test.py&quot;" />
       <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="Makefile Target.run_tests" />
       <item itemvalue="Makefile Target.breachdetector_pull" />
       <item itemvalue="Python.lister" />
       <item itemvalue="Python.main" />
-      <item itemvalue="Python.test" />
+      <item itemvalue="Python tests.pytest in /home/kali/Desktop/JetBrains/PyCharm/passwordList/test/pass_hub_test.py" />
+      <item itemvalue="Python tests.pytest for pass_hub_test.TestFindScriptPath" />
       <item itemvalue="Python tests.pytest for file_format_test.TestLoadConfig.test_load_config_file_not_found" />
-      <item itemvalue="Python tests.pytest for logfile_test.LogFileNew" />
-      <item itemvalue="Python tests.pytest in logfile_test.py" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Makefile Target.run_tests" />
+        <item itemvalue="Python tests.pytest for pass_hub_test.TestFindScriptPath" />
+        <item itemvalue="Python tests.pytest in /home/kali/Desktop/JetBrains/PyCharm/passwordList/test/pass_hub_test.py" />
         <item itemvalue="Makefile Target.breachdetector_pull" />
         <item itemvalue="Python tests.pytest for file_format_test.TestLoadConfig.test_load_config_file_not_found" />
-        <item itemvalue="Python.test" />
-        <item itemvalue="Python tests.pytest in logfile_test.py" />
-        <item itemvalue="Python tests.pytest for logfile_test.LogFileNew" />
       </list>
     </recent_temporary>
   </component>
@@ -635,7 +595,11 @@
       <workItem from="1722945234839" duration="4000" />
       <workItem from="1724082381933" duration="2146000" />
       <workItem from="1724165740182" duration="452000" />
-      <workItem from="1724235730498" duration="1418000" />
+      <workItem from="1724235730498" duration="31575000" />
+      <workItem from="1724311873298" duration="8468000" />
+      <workItem from="1724323074641" duration="1086000" />
+      <workItem from="1724339344617" duration="4828000" />
+      <workItem from="1724401843261" duration="11626000" />
     </task>
     <task id="LOCAL-00001" summary="scripts and resource database">
       <option name="closed" value="true" />
@@ -781,7 +745,15 @@
       <option name="project" value="LOCAL" />
       <updated>1719436897082</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="bordel, zmatek, cloudafare se do to zase se... sejří">
+      <option name="closed" value="true" />
+      <created>1724237351802</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1724237351802</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -791,6 +763,7 @@
     <option featureType="dependencySupport" implementationName="executable:docker" />
     <option featureType="com.intellij.fileTypeFactory" implementationName="*.mp" />
     <option featureType="com.intellij.configurationType" implementationName="LATEX_RUN_CONFIGURATION" />
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.rule" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="RECENT_FILTERS">
@@ -853,38 +826,30 @@
     <MESSAGE value="giignore" />
     <MESSAGE value="no_hide download" />
     <MESSAGE value="breachdetector better REGEX" />
-    <option name="LAST_COMMIT_MESSAGE" value="breachdetector better REGEX" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/lib/file_regex.py</url>
-          <line>7</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="bordel, zmatek, cloudafare se do to zase se... sejří" />
+    <option name="LAST_COMMIT_MESSAGE" value="bordel, zmatek, cloudafare se do to zase se... sejří" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/passwordList$pytest_for_file_format_test_TestLoadConfig_test_load_config_file_not_found.coverage" NAME="pytest for file_format_test.TestLoadConfig.test_load_config_file_not_found Coverage Results" MODIFIED="1716969910207" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/PythonWebBots/tests" />
-    <SUITE FILE_PATH="coverage/passwordList$pytest_for_logfile_test_TestLogFileUpdate_test_update.coverage" NAME="pytest for logfile_test.TestLogFileUpdate.test_update Coverage Results" MODIFIED="1715412017878" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lib/test" />
-    <SUITE FILE_PATH="coverage/passwordList$pytest_for_unit_test_TestCreateFileIfNotExist_test_create_file_if_not_exists.coverage" NAME="pytest for unit_test.TestCreateFileIfNotExist.test_create_file_if_not_exists Coverage Results" MODIFIED="1714548853605" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/PythonWebBots/tests" />
-    <SUITE FILE_PATH="coverage/passwordList$passlist.coverage" NAME="passlist Coverage Results" MODIFIED="1714674295257" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/passwordList$pytest_for_logfile_test_TestLogFileNew_test_empty.coverage" NAME="pytest for logfile_test.TestLogFileNew.test_empty Coverage Results" MODIFIED="1715366303373" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lib/test" />
-    <SUITE FILE_PATH="coverage/passwordList$pytest_for_logfile_test_TestLogFileInit_test_init_invalid.coverage" NAME="pytest for logfile_test.TestLogFileInit.test_init_invalid Coverage Results" MODIFIED="1715377425002" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lib/test" />
-    <SUITE FILE_PATH="coverage/passwordList$test.coverage" NAME="test Coverage Results" MODIFIED="1715687525073" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lib/test" />
-    <SUITE FILE_PATH="coverage/passwordList$soucet.coverage" NAME="soucet Coverage Results" MODIFIED="1699277880467" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/passwordList$pytest_for_logfile_test_TestLogFileNew_test_empty_no_args.coverage" NAME="pytest for logfile_test.TestLogFileNew.test_empty_no_args Coverage Results" MODIFIED="1715409557867" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lib/test" />
-    <SUITE FILE_PATH="coverage/passwordList$pytest_for_logfile_test_LogFileNew.coverage" NAME="pytest for logfile_test.LogFileNew Coverage Results" MODIFIED="1715416134188" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lib/test" />
-    <SUITE FILE_PATH="coverage/passwordList$pytest_in_unit_test_py.coverage" NAME="pytest in unit_test.py Coverage Results" MODIFIED="1714547155002" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/PythonWebBots/tests" />
     <SUITE FILE_PATH="coverage/passwordList$pytest_for_logfile_test_TestCreateFileIfNotExist_test_new.coverage" NAME="pytest for logfile_test.TestCreateFileIfNotExist.test_new Coverage Results" MODIFIED="1715364233043" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lib/test" />
-    <SUITE FILE_PATH="coverage/passwordList$pytest_for_unit_test_TestCreateFileIfNotExist.coverage" NAME="pytest for unit_test.TestCreateFileIfNotExist Coverage Results" MODIFIED="1714547141562" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/PythonWebBots/tests" />
-    <SUITE FILE_PATH="coverage/passwordList$lister.coverage" NAME="lister Coverage Results" MODIFIED="1711435322603" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/passwordList$pytest_for_logfile_test_LogFileNew_test_empty.coverage" NAME="pytest for logfile_test.LogFileNew.test_empty Coverage Results" MODIFIED="1715415298597" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lib/test" />
-    <SUITE FILE_PATH="coverage/passwordList$pytest_for_logfile_test_TestCreateFileIfNotExist_test_init.coverage" NAME="pytest for logfile_test.TestCreateFileIfNotExist.test_init Coverage Results" MODIFIED="1715377183672" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lib/test" />
-    <SUITE FILE_PATH="coverage/passwordList$pytest_for_logfile_test_TestLogFileInit_test_init.coverage" NAME="pytest for logfile_test.TestLogFileInit.test_init Coverage Results" MODIFIED="1715377896344" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lib/test" />
-    <SUITE FILE_PATH="coverage/passwordList$pytest_in_logfile_test_py.coverage" NAME="pytest in logfile_test.py Coverage Results" MODIFIED="1715416259997" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lib/test" />
+    <SUITE FILE_PATH="coverage/passwordList$test.coverage" NAME="test Coverage Results" MODIFIED="1715687525073" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lib/test" />
+    <SUITE FILE_PATH="coverage/passwordList$pytest_for_logfile_test_TestLogFileUpdate_test_update.coverage" NAME="pytest for logfile_test.TestLogFileUpdate.test_update Coverage Results" MODIFIED="1715412017878" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lib/test" />
+    <SUITE FILE_PATH="coverage/passwordList$pytest_in_unit_test_py.coverage" NAME="pytest in unit_test.py Coverage Results" MODIFIED="1714547155002" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/PythonWebBots/tests" />
+    <SUITE FILE_PATH="coverage/passwordList$passlist.coverage" NAME="passlist Coverage Results" MODIFIED="1714674295257" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/passwordList$main.coverage" NAME="main Coverage Results" MODIFIED="1711435402754" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/TelegramChecker/regex_checker" />
+    <SUITE FILE_PATH="coverage/passwordList$pytest_for_logfile_test_TestLogFileNew_test_empty.coverage" NAME="pytest for logfile_test.TestLogFileNew.test_empty Coverage Results" MODIFIED="1715366303373" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lib/test" />
+    <SUITE FILE_PATH="coverage/passwordList$soucet.coverage" NAME="soucet Coverage Results" MODIFIED="1699277880467" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/passwordList$pytest_for_unit_test_TestCreateFileIfNotExist_test_create_file_if_not_exists.coverage" NAME="pytest for unit_test.TestCreateFileIfNotExist.test_create_file_if_not_exists Coverage Results" MODIFIED="1714548853605" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/PythonWebBots/tests" />
+    <SUITE FILE_PATH="coverage/passwordList$pytest_in_pass_hub_test_py.coverage" NAME="pytest in pass_hub_test.py Coverage Results" MODIFIED="1724251727908" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/.." />
+    <SUITE FILE_PATH="coverage/passwordList$pytest_for_logfile_test_TestLogFileInit_test_init.coverage" NAME="pytest for logfile_test.TestLogFileInit.test_init Coverage Results" MODIFIED="1715377896344" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lib/test" />
+    <SUITE FILE_PATH="coverage/passwordList$pytest_for_logfile_test_LogFileNew.coverage" NAME="pytest for logfile_test.LogFileNew Coverage Results" MODIFIED="1715416134188" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lib/test" />
+    <SUITE FILE_PATH="coverage/passwordList$pytest_for_logfile_test_TestCreateFileIfNotExist_test_init.coverage" NAME="pytest for logfile_test.TestCreateFileIfNotExist.test_init Coverage Results" MODIFIED="1715377183672" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lib/test" />
+    <SUITE FILE_PATH="coverage/passwordList$pytest_for_pass_hub_test_TestFindScriptPath.coverage" NAME="pytest for pass_hub_test.TestFindScriptPath Coverage Results" MODIFIED="1724251761561" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
+    <SUITE FILE_PATH="coverage/passwordList$pytest_for_unit_test_TestCreateFileIfNotExist.coverage" NAME="pytest for unit_test.TestCreateFileIfNotExist Coverage Results" MODIFIED="1714547141562" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/PythonWebBots/tests" />
+    <SUITE FILE_PATH="coverage/passwordList$pytest_in_logfile_test_py.coverage" NAME="pytest in logfile_test.py Coverage Results" MODIFIED="1715416259997" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lib/test" />
+    <SUITE FILE_PATH="coverage/passwordList$pytest_for_logfile_test_TestLogFileInit_test_init_invalid.coverage" NAME="pytest for logfile_test.TestLogFileInit.test_init_invalid Coverage Results" MODIFIED="1715377425002" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lib/test" />
+    <SUITE FILE_PATH="coverage/passwordList$pytest_for_logfile_test_TestLogFileNew_test_empty_no_args.coverage" NAME="pytest for logfile_test.TestLogFileNew.test_empty_no_args Coverage Results" MODIFIED="1715409557867" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lib/test" />
+    <SUITE FILE_PATH="coverage/passwordList$pytest_for_logfile_test_LogFileNew_test_empty.coverage" NAME="pytest for logfile_test.LogFileNew.test_empty Coverage Results" MODIFIED="1715415298597" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lib/test" />
+    <SUITE FILE_PATH="coverage/passwordList$pytest_for_file_format_test_TestLoadConfig_test_load_config_file_not_found.coverage" NAME="pytest for file_format_test.TestLoadConfig.test_load_config_file_not_found Coverage Results" MODIFIED="1716969910207" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/PythonWebBots/tests" />
+    <SUITE FILE_PATH="coverage/passwordList$lister.coverage" NAME="lister Coverage Results" MODIFIED="1711435322603" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

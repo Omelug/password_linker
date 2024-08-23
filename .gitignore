@@ -6,6 +6,9 @@ venv
 /TelegramChecker/regex_checker/options.json
 /extended_tools
 
+/python_pass_web_bots/build
+/python_pass_web_bots/python_pass_web_bots.egg-info
+
 /python_pass_web_bots/nohide_space/downloaded_files
 /python_pass_web_bots/nohide_space/no-space.png
 /python_pass_web_bots/nohide_space/nohide-space-message.txt
@@ -14,3 +17,4 @@ venv
 /test/stary_bordel
 /TelegramChecker/user_config.py
 /TelegramChecker/Makefile
+

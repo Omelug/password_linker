@@ -18,3 +18,16 @@ find ./rsc/ | grep -P ".*?/edited/.*?/.*?pass(.[^/])?\.txt" | python3 passlist.p
 czech emails filter
 cat ./rsc/Big_bread_filtered/original/Cit0day/Cit0day\ cleaned.txt | grep -P "^.*?\.cz.*?$"  > ./rsc/Big_bread_filtered/edited/Cit0day/email:pass.txt
 ------------------------------------------------------
+
+get all password resources from edited and create count file
+find ./rsc/ | grep -P ".*?/edited/.*?/.*?pass(.[^/])?\.txt" | python3 pass_hub.py linker.py --file_regex pass | sort - | uniq -c | sort -nr  > ./linkedLists/pass_count.txt
+------------------------------------------------------
+
+nohide_space email:pass passwords
+
+find ./rsc/nohide_space/original/ | grep -P "/.*?/email:pass.txt" | python3 pass_hub.py linker.py --file_regex pass | sort - | uniq -c | sort -nr | awk '{if (length($2) >= 8) print $2}' > ./linkedLists/pass_no_hide_for_wifi.txt
+------------------------------------------------------
+
+
+Wifi:
+

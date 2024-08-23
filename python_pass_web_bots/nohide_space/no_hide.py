@@ -1,27 +1,18 @@
 import argparse
-import logging
 import os
-import random
-
-from selenium.webdriver.firefox.options import Options
-
-from database import *
-from selenium import webdriver
+import re
+import sys
+from selenium.common.exceptions import NoSuchElementException, TimeoutException
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
-from selenium.common.exceptions import NoSuchElementException, TimeoutException
-import re
-import sys
-from sqlalchemy import create_engine, text
-from sqlalchemy.orm import sessionmaker
-from selenium_stealth import stealth
-import undetected_chromedriver as uc
+
+from database import *
+from web import driver_def
 
 lib_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), '../..')
 sys.path.append(lib_dir)
 from lib.file_format import *
-from web.user_agent import user_agents
 
 logging.basicConfig(level=logging.INFO,
                     # filename="main.log",
@@ -145,20 +136,43 @@ def download_files(driver):
 
 
 def cloudfare_wait_checkbox(driver):
-    time.sleep(15)
-    cloudflare_label = None
-    p = driver.find_elements(By.CSS_SELECTOR, "iframe")
+    WebDriverWait(driver, 20).until(EC.presence_of_element_located((By.TAG_NAME, "iframe")))
+    print("Finding iframe :", end="")
+    p = driver.find_elements(By.TAG_NAME, "iframe")
     print(p)
-    for i in range(10):
-        try:
-            cloudflare_label = WebDriverWait(driver, 10).until(EC.frame_to_be_available_and_switch_to_it(
-                (By.CSS_SELECTOR, "div")))
-            break
-        except TimeoutException:
-            logging.info("No iframe")
+    try:
+        cloudflare_label = WebDriverWait(driver, 10).until(EC.frame_to_be_available_and_switch_to_it(
+            (By.CSS_SELECTOR, "div")))
+    except TimeoutException:
+        logging.info("No iframe")
+        exit(42)
     print(cloudflare_label)
     WebDriverWait(driver, 20).until(EC.element_to_be_clickable((By.CSS_SELECTOR, "label.cb-lb"))).click()
     time.sleep(5)
+
+
+def wait_for_cloudflare_checkbox(driver, timeout=300, check_interval=5):
+    """
+    Waits until the user manually solves the Cloudflare checkbox.
+
+    :param driver: The WebDriver instance.
+    :param timeout: Maximum time to wait for the checkbox to be solved (in seconds).
+    :param check_interval: Time interval between checks (in seconds).
+    """
+    end_time = time.time() + timeout
+    while time.time() < end_time:
+        try:
+            # Check if the Cloudflare checkbox iframe is still present
+            if not driver.find_elements(By.CSS_SELECTOR, "iframe"):
+                logging.info("Cloudflare checkbox solved.")
+                return True
+        except Exception as e:
+            logging.error(f"Error while checking Cloudflare checkbox: {e}")
+
+        time.sleep(check_interval)
+
+    logging.error("Timeout waiting for Cloudflare checkbox to be solved.")
+    return False
 
 
 if __name__ == "__main__":
@@ -170,47 +184,18 @@ if __name__ == "__main__":
 
     args = parser.parse_args()
 
-    #Firefox
-    options = Options()
-    
-    #options.set_preference("browser.download.folderList", 2)
-    #options.set_preference("browser.download.manager.showWhenStarting", False)
-    #options.set_preference("browser.download.dir", "./downloads")
-    #options.set_preference("browser.helperApps.neverAsk.saveToDisk", "application/x-gzip")
-
-    ## Disable loading images for faster crawling
-    #options.add_argument('--blink-settings=imagesEnabled=false')
-    #options.add_argument(f'user-agent={random.choice(user_agents)}')
-
-
-    #driver = webdriver.Firefox(options=options)
-
-    driver = uc.Chrome(use_subprocess=False)
-
-    """Chrome from selenium.webdriver.chrome.options import Options
-
-    options = Options()
-    options.add_experimental_option("prefs", {
-        "download.default_directory": "./downloads",
-        "download.prompt_for_download": False,
-        "profile.default_content_settings.popups": 0,
-        "profile.content_settings.exceptions.automatic_downloads.*.setting": 1
-    })
-
-    # Disable loading images for faster crawling
-    options.add_argument('--blink-settings=imagesEnabled=false')
-    options.add_argument(f'user-agent={random.choice(user_agents)}')
-
-    driver = webdriver.Chrome(options=options)"""
-
-    driver.get("https://nohide.space/search/572982/?q=czech&o=date")
-    cloudfare_wait_checkbox(driver)
-    exit(42)
+    driver = driver_def.get_FF()
+    #driver.get("https://nohide.space/search/572982/?q=czech&o=date")
+    #cloudfare_wait_checkbox(driver)
 
     #TODO
     if args.get_new_post or args.get_links:
         driver.get("https://nohide.space/search/572982/?q=czech&o=date")
-        cloudfare_wait_checkbox(driver)
+        #cloudfare_wait_checkbox(driver)
+        #time.sleep(10)
+        #wait_for_cloudflare_checkbox(driver)
+        input("Please complete the manual steps in the browser and press Enter to continue...")
+
     if args.get_new_post:
         last_time_list = load_config(option_file, "last_time_list", "0001-01-01 00:00:00")
         logging.info(f"last_time_list: {last_time_list}")
