@@ -1,11 +1,8 @@
 /linkedLists
 /rsc
-.idea
 /.idea
 venv
 /TelegramChecker/regex_checker/options.json
-/extended_tools
-
 /python_pass_web_bots/build
 /python_pass_web_bots/python_pass_web_bots.egg-info
 
@@ -18,3 +15,10 @@ venv
 /TelegramChecker/user_config.py
 /TelegramChecker/Makefile
 
+/test/scripts/*/*/result.txt
+
+/external_tools/AtlantrPython3/
+/external_tools/Character-Frequency-CLI-Tool/
+/external_tools/output/
+/external_tools/pipal/
+/external_tools/Password-Scripts_ex_tool/

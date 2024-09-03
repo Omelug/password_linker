@@ -1,8 +1,10 @@
 import importlib.util
 import os
+import shutil
 import sys
 import re
 from lib.logfile import LogFile
+from colorama import Fore, Style
 
 lib_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), '.')
 sys.path.append(lib_dir)
@@ -55,22 +57,25 @@ def print_help():
         
         Base scripts
         link - link lists
-        merer - merge list, remove duplicates
+        compress - merge list, remove duplicates
         mask - find masks for list
         """, file=sys.stderr
     )
 
 
 def print_e(msg):
-    print(msg, file=sys.stderr)
+    print(Fore.RED + msg, file=sys.stderr)
 
 def find_script_path(script_name):
     script_base_path = os.path.abspath(os.path.dirname(__file__))
     base_path = os.path.join(script_base_path, conf['script_path'])
-    find_cmd = subprocess.run(['find', base_path, '-name', f"{script_name}"], capture_output=True, text=True)
+    find = ['find', base_path, '-name', f"{script_name}"]
+    find_cmd = subprocess.run(find, capture_output=True, text=True)
     matches = find_cmd.stdout.strip().split('\n')
-    logging.debug(f"{find_cmd} --> {matches}")
+
+    logging.debug(f"{' '.join(find)} --> {matches}")
     if len(matches) == 0 or matches == ['']:
+        print_e( "You have to write script name with extension!!!!")
         raise FileNotFoundError(f"No script named '{script_name}' found in '{base_path}'")
     elif len(matches) > 1:
         raise ValueError(f"Multiple scripts named '{script_name}' found in '{base_path}': {matches}")
@@ -88,6 +93,26 @@ if __name__ == "__main__":
     else:
         script_path = find_script_path(sys.argv[1])
         imported_script = import_script(script_path)
+
+        script_dir = os.path.dirname(os.path.abspath(__file__))
+        ex_tool_path = os.path.join(script_dir, 'external_tools', 'ex_tool.json')
+        ex_tool_backup_path = os.path.join(script_dir, 'external_tools', 'ex_tool.json.bak')
+
+        try:
+            with open(ex_tool_path) as f:
+                ex_tool = json.load(f)
+        except FileNotFoundError:
+            shutil.copy(ex_tool_backup_path, ex_tool_path)
+            with open(ex_tool_path) as f:
+                ex_tool = json.load(f)
+
+        if hasattr(imported_script, '__external_tools__'):
+            for tool in imported_script.__external_tools__:
+                if not ex_tool['external_tools'][tool]['installed']:
+                    print_e(f"External tool '{tool}' required by script '{sys.argv[1]}' not found in configuration.")
+                    print_e(f"Go to external tools and run git clone {ex_tool['external_tools'][tool]['source_git']}")
+                    sys.exit(1)
+
         run_func = getattr(imported_script, 'run')
         run_func(args=sys.argv,config=CONFIG)
 """

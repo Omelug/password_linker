@@ -4,6 +4,11 @@ import subprocess
 import sys
 import input_parser
 
+__author__ = 'Omelug'
+__date__ = '2024'
+__description__ = """Filter files by regex"""
+
+
 REGEX_DICT = {
     "CZECH" : r'czech|databáze|česk|prague|praha|[^a-zA-Z]cz[^a-zA-Z]',
     "SLOVAK" : r'slovak|databáza|bratislav|[^a-zA-Z]sk[^a-zA-Z]',

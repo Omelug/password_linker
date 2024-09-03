@@ -2,16 +2,17 @@ import logging
 import os
 import sys
 import input_parser
-from lib.file_format import now_string
-from lib.file_regex import get_file_regex, get_max_file_regex, print_file_regex
-from lib.logfile import LogFile
-from pass_hub import print_e
+from lib.file_regex import get_file_regex, get_max_file_regex
+
+__author__ = 'Omelug'
+__date__ = '2024'
+__description__ = "Link files to one file"
+
 
 CONFIG= {}
 conf = {}
 
 logging.basicConfig(level=logging.ERROR)
-
 
 def print_file_values(file_path, out_keys, SEP=None,out_file=None) -> None:
     try:
