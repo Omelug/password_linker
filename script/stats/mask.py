@@ -27,7 +27,7 @@ def print_help():
     """)
 
 def get_args(args):
-    parser = input_parser.InputParser(description="Linker Script")
+    parser = input_parser.InputParser()
     parser.add_argument("--pass_list", type=str, required=True)
     parser.add_argument("-v", "--verbose",action='store_true', help="Increase output verbosity.")
     #parser.add_argument("--password", type=str, required=True)

@@ -12,7 +12,9 @@ __description__ = """Filter files by regex"""
 REGEX_DICT = {
     "CZECH" : r'czech|databáze|česk|prague|praha|[^a-zA-Z]cz[^a-zA-Z]',
     "SLOVAK" : r'slovak|databáza|bratislav|[^a-zA-Z]sk[^a-zA-Z]',
-    "EUROPE" : r'Europe|[^a-zA-Z]eu[^a-zA-Z]'
+    "EUROPE" : r'Europe|[^a-zA-Z]eu[^a-zA-Z]',
+    "ASCII_ONLY" : r'^[\x00-\x7F]+$',
+    "PLAIN_TEXT" : r'^[\x21-\x7E]+$'
 }
 
 def print_help():
@@ -23,9 +25,8 @@ def print_help():
     """)
 
 def get_args(args):
-    parser = input_parser.InputParser(description="Linker Script")
+    parser = input_parser.InputParser()
     parser.add_argument("--regex_name", type=str, required=True)
-
     parser.add_argument('--in_file_list', type=str, default=None)
 
     parsed_args, _ = parser.parse_known_args(args)
@@ -67,6 +68,5 @@ def run(args, config=None):
     script_name = os.path.basename(__file__)
     logging.info(f"--> {script_name}")
     ARGS = get_args(args)
-
     filter_lines(ARGS.in_file_list, regex_name=ARGS.regex_name)
 

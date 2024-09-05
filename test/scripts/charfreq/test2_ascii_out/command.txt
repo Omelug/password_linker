@@ -1,0 +1,1 @@
+python3 ../../pass_hub.py charfreq.py -s -w 3 --ascii_out

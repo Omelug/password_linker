@@ -4,45 +4,39 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="08a8aebd-615c-479e-80cf-80a36b1f6f35" name="Changes" comment="bordel, zmatek, cloudafare se do to zase se... sejří">
-      <change afterPath="$PROJECT_DIR$/pass_config.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python_pass_web_bots/web/driver_def.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/script/crack/hashcat-rule/rules" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/script/format/linker.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/script/repair/filter.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/scripts/filter/test1_CZECH_regex/command.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/scripts/filter/test1_CZECH_regex/data/email:pass.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/scripts/filter/test1_CZECH_regex/output.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/scripts/linker/test1_one_param_link/command.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/scripts/linker/test1_one_param_link/data/email:pass.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/scripts/linker/test1_one_param_link/data/pass.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/scripts/linker/test1_one_param_link/output.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/scripts/linker/test2_link_all/command.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/scripts/linker/test2_link_all/data/email:pass.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/scripts/linker/test2_link_all/data/pass:md5.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/scripts/linker/test2_link_all/output.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/scripts/linker/test3_link_all_auto/command.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/scripts/linker/test3_link_all_auto/data/email:pass.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/scripts/linker/test3_link_all_auto/data/pass:md5.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/scripts/linker/test3_link_all_auto/output.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/scripts/linker/test3_link_all_auto/result.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/scripts/linker_test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="08a8aebd-615c-479e-80cf-80a36b1f6f35" name="Changes" comment="mask script">
+      <change afterPath="$PROJECT_DIR$/test/scripts/README.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/scripts/charfreq/test1_BASE/command.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/scripts/charfreq/test1_BASE/data/text.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/scripts/charfreq/test1_BASE/output.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/scripts/charfreq/test1_BASE/result.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/scripts/charfreq/test2_ascii_out/command.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/scripts/charfreq/test2_ascii_out/data/text.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/scripts/charfreq/test2_ascii_out/output.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/scripts/charfreq/test2_ascii_out/result.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/scripts/compressor/test1_BASE/command.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/scripts/compressor/test1_BASE/data/pass:md5.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/scripts/compressor/test1_BASE/output.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/scripts/filter/test2_PLAIN_regex/command.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/scripts/filter/test2_PLAIN_regex/data/pass.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/scripts/filter/test2_PLAIN_regex/output.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/passwordList.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/passwordList.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/Makefile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/file_regex.py" beforeDir="false" afterPath="$PROJECT_DIR$/lib/file_regex.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/passlist.py" beforeDir="false" afterPath="$PROJECT_DIR$/pass_hub.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/python_pass_web_bots/nohide_space/no_hide.py" beforeDir="false" afterPath="$PROJECT_DIR$/python_pass_web_bots/nohide_space/no_hide.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/python_pass_web_bots/nohide_space/options.json" beforeDir="false" afterPath="$PROJECT_DIR$/python_pass_web_bots/nohide_space/options.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/script/crack/commands" beforeDir="false" afterPath="$PROJECT_DIR$/script/crack/commands" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/script/crack/hashcat-rule" beforeDir="false" afterPath="$PROJECT_DIR$/script/crack/hashcat-rule" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/script/crack/rules" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/script/crack/wifi" beforeDir="false" afterPath="$PROJECT_DIR$/script/crack/wifi" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/script/format/commands" beforeDir="false" afterPath="$PROJECT_DIR$/script/format/commands" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/script/format/pass_from_DB.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/script/one_info.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/MakeFile" beforeDir="false" afterPath="$PROJECT_DIR$/test/MakeFile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/external_tools/Password-Scripts_ex_tool/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/external_tools/Password-Scripts_ex_tool/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/external_tools/Password-Scripts_ex_tool/.idea/Password-Scripts_ex_tool.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/external_tools/Password-Scripts_ex_tool/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/external_tools/Password-Scripts_ex_tool/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/external_tools/Password-Scripts_ex_tool/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/external_tools/Password-Scripts_ex_tool/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/external_tools/Password-Scripts_ex_tool/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/script/format/linker.py" beforeDir="false" afterPath="$PROJECT_DIR$/script/format/linker.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/script/repair/filter.py" beforeDir="false" afterPath="$PROJECT_DIR$/script/repair/filter.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/script/stats/mask.py" beforeDir="false" afterPath="$PROJECT_DIR$/script/stats/mask.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/MakeFile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/scripts/linker_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/scripts/linker_test.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,6 +65,7 @@
             <value>
               <list>
                 <branch-info repo="$PROJECT_DIR$/rsc/zxcvbn-czech_github/original/zxcvbn-czech" source="origin/master" />
+                <branch-info repo="$PROJECT_DIR$/script/crack/hashcat-rule" source="origin/master" />
               </list>
             </value>
           </entry>
@@ -90,17 +85,14 @@
     &quot;state&quot;: &quot;OPEN&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">
-    <option name="selectedUrlAndAccountId">
-      <UrlAndAccount>
-        <option name="accountId" value="9541fce6-388c-4e5a-8ce2-be4f40e61158" />
-        <option name="url" value="https://github.com/clem9669/hashcat-rule.git" />
-      </UrlAndAccount>
-    </option>
-  </component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;git@github.com:Omelug/password_linker.git&quot;,
+    &quot;accountId&quot;: &quot;9541fce6-388c-4e5a-8ce2-be4f40e61158&quot;
+  }
+}</component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/res/soom/zatim:nevyuzito(moc nahodna hesla)/czech.txt" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/res/soom/zatim:nevyuzito(moc nahodna hesla)/czech2.txt" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/extended_tools/Password-Scripts_ex_tool/capitalize_letters.py" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -125,70 +117,71 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultPlantUmlFileTemplate": "UML Use Case",
-    "Makefile Target.breachdetector_pull.executor": "Run",
-    "Makefile Target.run_tests.executor": "Run",
-    "Python tests.pytest for file_format_test.TestLoadConfig.test_load_config_file_not_found.executor": "Run",
-    "Python tests.pytest for logfile_test.LogFileNew.executor": "Run",
-    "Python tests.pytest for logfile_test.LogFileNew.test_empty.executor": "Run",
-    "Python tests.pytest for logfile_test.TestCreateFileIfNotExist.test_init.executor": "Run",
-    "Python tests.pytest for logfile_test.TestCreateFileIfNotExist.test_new.executor": "Run",
-    "Python tests.pytest for logfile_test.TestLogFileInit.test_init.executor": "Run",
-    "Python tests.pytest for logfile_test.TestLogFileInit.test_init_invalid.executor": "Run",
-    "Python tests.pytest for logfile_test.TestLogFileNew.test_empty.executor": "Run",
-    "Python tests.pytest for logfile_test.TestLogFileNew.test_empty_no_args.executor": "Run",
-    "Python tests.pytest for logfile_test.TestLogFileUpdate.test_update.executor": "Run",
-    "Python tests.pytest for pass_hub_test.TestFindScriptPath.executor": "Debug",
-    "Python tests.pytest for unit_test.TestCreateFileIfNotExist.executor": "Run",
-    "Python tests.pytest for unit_test.TestCreateFileIfNotExist.test_create_file_if_not_exists.executor": "Run",
-    "Python tests.pytest in logfile_test.py.executor": "Run",
-    "Python tests.pytest in pass_hub_test.py.executor": "Run",
-    "Python tests.pytest in unit_test.py.executor": "Run",
-    "Python.lister.executor": "Debug",
-    "Python.main.executor": "Run",
-    "Python.passlist.executor": "Run",
-    "Python.test.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "ToolWindowTerminal.ShowToolbar": "false",
-    "WebServerToolWindowFactoryState": "false",
-    "database.data.extractors.current.export.id": "Pipe-separated_id",
-    "database.data.extractors.current.id": "Pipe-separated_id",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "/home/kali/Desktop/JetBrains/PyCharm/passwordList/test/scripts/filter/test1_CZECH_regex",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultPlantUmlFileTemplate&quot;: &quot;UML Use Case&quot;,
+    &quot;Makefile Target.breachdetector_pull.executor&quot;: &quot;Run&quot;,
+    &quot;Makefile Target.run_tests.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.pytest for file_format_test.TestLoadConfig.test_load_config_file_not_found.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.pytest for logfile_test.LogFileNew.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.pytest for logfile_test.LogFileNew.test_empty.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.pytest for logfile_test.TestCreateFileIfNotExist.test_init.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.pytest for logfile_test.TestCreateFileIfNotExist.test_new.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.pytest for logfile_test.TestLogFileInit.test_init.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.pytest for logfile_test.TestLogFileInit.test_init_invalid.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.pytest for logfile_test.TestLogFileNew.test_empty.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.pytest for logfile_test.TestLogFileNew.test_empty_no_args.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.pytest for logfile_test.TestLogFileUpdate.test_update.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.pytest for pass_hub_test.TestFindScriptPath.executor&quot;: &quot;Debug&quot;,
+    &quot;Python tests.pytest for unit_test.TestCreateFileIfNotExist.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.pytest for unit_test.TestCreateFileIfNotExist.test_create_file_if_not_exists.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.pytest in logfile_test.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.pytest in pass_hub_test.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.pytest in unit_test.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python.charfreq.executor&quot;: &quot;Run&quot;,
+    &quot;Python.lister.executor&quot;: &quot;Debug&quot;,
+    &quot;Python.main.executor&quot;: &quot;Run&quot;,
+    &quot;Python.passlist.executor&quot;: &quot;Run&quot;,
+    &quot;Python.test.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;ToolWindowTerminal.ShowToolbar&quot;: &quot;false&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;database.data.extractors.current.export.id&quot;: &quot;Pipe-separated_id&quot;,
+    &quot;database.data.extractors.current.id&quot;: &quot;Pipe-separated_id&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/kali/Desktop/JetBrains/PyCharm/passwordList/test/scripts/charfreq&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "sqlite"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;sqlite&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/test/scripts/filter/test1_CZECH_regex" />
-      <recent name="$PROJECT_DIR$/rsc/leakbase/original" />
-      <recent name="$PROJECT_DIR$/test/linker/test3_link_all_auto" />
-      <recent name="$PROJECT_DIR$/test/linker" />
-      <recent name="$PROJECT_DIR$/script/format" />
+      <recent name="$PROJECT_DIR$/test/scripts/charfreq" />
+      <recent name="$PROJECT_DIR$/test/scripts/compressor" />
+      <recent name="$PROJECT_DIR$/test/scripts/filter" />
+      <recent name="$PROJECT_DIR$/test/scripts/mask" />
+      <recent name="$PROJECT_DIR$/external_tools" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/script/stats" />
+      <recent name="$PROJECT_DIR$/test/scripts" />
+      <recent name="$PROJECT_DIR$/extended_tools1/output" />
       <recent name="$PROJECT_DIR$/test/scripts/linker" />
       <recent name="$PROJECT_DIR$/rsc/GGBestCombo/original" />
-      <recent name="$PROJECT_DIR$/rsc" />
-      <recent name="$PROJECT_DIR$/rsc/leakbase/original/GGBestCombo" />
-      <recent name="$PROJECT_DIR$/test/linker/test1/data" />
     </key>
   </component>
-  <component name="RunManager" selected="Makefile Target.run_tests">
+  <component name="RunManager" selected="Python.charfreq">
     <configuration name="breachdetector_pull" type="MAKEFILE_TARGET_RUN_CONFIGURATION" factoryName="Makefile" temporary="true">
       <makefile filename="$PROJECT_DIR$/Makefile" target="breachdetector_pull" workingDirectory="" arguments="">
         <envs />
@@ -199,6 +192,29 @@
       <makefile filename="$PROJECT_DIR$/test/MakeFile" target="run_tests" workingDirectory="" arguments="">
         <envs />
       </makefile>
+      <method v="2" />
+    </configuration>
+    <configuration name="charfreq" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="passwordList" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/external_tools/Character-Frequency-CLI-Tool" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/external_tools/Character-Frequency-CLI-Tool/charfreq.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
     <configuration name="lister" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
@@ -247,24 +263,6 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="pytest for file_format_test.TestLoadConfig.test_load_config_file_not_found" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
-      <module name="passwordList" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/PythonWebBots/tests" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="_new_keywords" value="&quot;&quot;" />
-      <option name="_new_parameters" value="&quot;&quot;" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;file_format_test.TestLoadConfig.test_load_config_file_not_found&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-      <method v="2" />
-    </configuration>
     <configuration name="pytest for pass_hub_test.TestFindScriptPath" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
       <module name="passwordList" />
       <option name="ENV_FILES" value="" />
@@ -302,21 +300,21 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Makefile Target.run_tests" />
       <item itemvalue="Makefile Target.breachdetector_pull" />
+      <item itemvalue="Makefile Target.run_tests" />
       <item itemvalue="Python.lister" />
       <item itemvalue="Python.main" />
-      <item itemvalue="Python tests.pytest in /home/kali/Desktop/JetBrains/PyCharm/passwordList/test/pass_hub_test.py" />
+      <item itemvalue="Python.charfreq" />
       <item itemvalue="Python tests.pytest for pass_hub_test.TestFindScriptPath" />
-      <item itemvalue="Python tests.pytest for file_format_test.TestLoadConfig.test_load_config_file_not_found" />
+      <item itemvalue="Python tests.pytest in /home/kali/Desktop/JetBrains/PyCharm/passwordList/test/pass_hub_test.py" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.charfreq" />
         <item itemvalue="Makefile Target.run_tests" />
         <item itemvalue="Python tests.pytest for pass_hub_test.TestFindScriptPath" />
         <item itemvalue="Python tests.pytest in /home/kali/Desktop/JetBrains/PyCharm/passwordList/test/pass_hub_test.py" />
         <item itemvalue="Makefile Target.breachdetector_pull" />
-        <item itemvalue="Python tests.pytest for file_format_test.TestLoadConfig.test_load_config_file_not_found" />
       </list>
     </recent_temporary>
   </component>
@@ -599,7 +597,15 @@
       <workItem from="1724311873298" duration="8468000" />
       <workItem from="1724323074641" duration="1086000" />
       <workItem from="1724339344617" duration="4828000" />
-      <workItem from="1724401843261" duration="11626000" />
+      <workItem from="1724401843261" duration="12530000" />
+      <workItem from="1724423955704" duration="924000" />
+      <workItem from="1724861169446" duration="656000" />
+      <workItem from="1724867759276" duration="3582000" />
+      <workItem from="1724914990537" duration="7612000" />
+      <workItem from="1724926177406" duration="3587000" />
+      <workItem from="1725347863968" duration="10609000" />
+      <workItem from="1725441008506" duration="12452000" />
+      <workItem from="1725517564444" duration="4977000" />
     </task>
     <task id="LOCAL-00001" summary="scripts and resource database">
       <option name="closed" value="true" />
@@ -753,7 +759,23 @@
       <option name="project" value="LOCAL" />
       <updated>1724237351802</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="link testy + script test system">
+      <option name="closed" value="true" />
+      <created>1724414923837</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1724414923838</updated>
+    </task>
+    <task id="LOCAL-00021" summary="mask script">
+      <option name="closed" value="true" />
+      <created>1725354294396</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1725354294396</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -784,6 +806,17 @@
             </list>
           </value>
         </entry>
+        <entry key="User">
+          <value>
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="*" />
+                </option>
+              </RecentGroup>
+            </list>
+          </value>
+        </entry>
       </map>
     </option>
     <option name="TAB_STATES">
@@ -796,7 +829,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="origin/main" />
+                        <option value="main" />
                       </list>
                     </value>
                   </entry>
@@ -827,11 +860,14 @@
     <MESSAGE value="no_hide download" />
     <MESSAGE value="breachdetector better REGEX" />
     <MESSAGE value="bordel, zmatek, cloudafare se do to zase se... sejří" />
-    <option name="LAST_COMMIT_MESSAGE" value="bordel, zmatek, cloudafare se do to zase se... sejří" />
+    <MESSAGE value="link testy + script test system" />
+    <MESSAGE value="mask script" />
+    <option name="LAST_COMMIT_MESSAGE" value="mask script" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/passwordList$pytest_for_logfile_test_TestCreateFileIfNotExist_test_new.coverage" NAME="pytest for logfile_test.TestCreateFileIfNotExist.test_new Coverage Results" MODIFIED="1715364233043" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lib/test" />
     <SUITE FILE_PATH="coverage/passwordList$test.coverage" NAME="test Coverage Results" MODIFIED="1715687525073" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lib/test" />
+    <SUITE FILE_PATH="coverage/passwordList$charfreq.coverage" NAME="charfreq Coverage Results" MODIFIED="1725475926916" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/external_tools/Character-Frequency-CLI-Tool" />
     <SUITE FILE_PATH="coverage/passwordList$pytest_for_logfile_test_TestLogFileUpdate_test_update.coverage" NAME="pytest for logfile_test.TestLogFileUpdate.test_update Coverage Results" MODIFIED="1715412017878" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lib/test" />
     <SUITE FILE_PATH="coverage/passwordList$pytest_in_unit_test_py.coverage" NAME="pytest in unit_test.py Coverage Results" MODIFIED="1714547155002" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/PythonWebBots/tests" />
     <SUITE FILE_PATH="coverage/passwordList$passlist.coverage" NAME="passlist Coverage Results" MODIFIED="1714674295257" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />

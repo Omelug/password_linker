@@ -10,13 +10,14 @@ logging.basicConfig(level=logging.ERROR)
 
 DEBUG=True
 
-RESULT_JSON = {
+DEFAULT_JSON = {
     "output":"output.txt",
     "command":"command.txt",
     "result":"result.txt",
     "data":"data",
     "cmd_prefix":"find"
 }
+
 def run_test(directory, check_order=False, sub_folder=".") -> bool:
     """
     default: data -> command.txt -> result.txt == output.txt?
@@ -24,6 +25,7 @@ def run_test(directory, check_order=False, sub_folder=".") -> bool:
     """
 
     #load result, override default values
+    RESULT_JSON = DEFAULT_JSON.copy()
     result_json_path = os.path.join(directory, 'result.json')
     if os.path.exists(result_json_path):
         with open(result_json_path, 'r') as json_file:
@@ -46,6 +48,8 @@ def run_test(directory, check_order=False, sub_folder=".") -> bool:
     #set up command changes
     if RESULT_JSON['cmd_prefix'] == 'find':
         command = f"find ./{sub_folder}/{os.path.basename(directory)}/{RESULT_JSON['data']}/ -type f | sort -t/ -k2,2| {command}"
+    if RESULT_JSON['cmd_prefix'] == 'cat':
+        command = f"cat ./{sub_folder}/{os.path.basename(directory)}/{RESULT_JSON['data']}/* | {command}"
     command = f"{command} > ./{sub_folder}/{os.path.basename(directory)}/{RESULT_JSON['result']}"
 
     print(Fore.CYAN, command, Fore.RESET)

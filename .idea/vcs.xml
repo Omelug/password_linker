@@ -2,7 +2,9 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/external_tools/Password-Scripts_ex_tool" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/rsc/zxcvbn-czech_github/original/zxcvbn-czech" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/script/Password_Research_Tools" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/script/crack/hashcat-rule" vcs="Git" />
   </component>
 </project>

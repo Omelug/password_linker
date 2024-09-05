@@ -91,7 +91,7 @@ def print_help():
     """)
 
 def get_args(args):
-    parser = input_parser.InputParser(description="Linker Script")
+    parser = input_parser.InputParser()
     parser.add_argument("--file_regex", type=str, required=True)
 
     parser.add_argument('--in_file_list', type=str, default=None)
