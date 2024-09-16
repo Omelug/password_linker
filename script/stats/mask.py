@@ -17,14 +17,7 @@ __inpired_author__ = 'Jake Miller (@LaconicWolf)'
 __inpired_src__ = "https://github.com/laconicwolf/Password-Scripts"
 
 ARGS = None
-def print_help():
-    # TODO --password "password"
 
-    print("""
-        Usage:
-            python3 mask.py 
-                --pass_list <regex_name> 
-    """)
 
 def get_args(args):
     parser = input_parser.InputParser()

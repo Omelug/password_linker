@@ -1,0 +1,5 @@
+
+Show graph
+python3 pass_hub.py checkpass.py --in_file "/home/kali/Desktop/JetBrains/PyCharm/passwordList/linkedLists/pass.txt" --guess_file "/home/kali/Desktop/JetBrains/PyCharm/passwordList/linkedLists/pass_count_no_hide_wifi.txt" | python3 pass_hub.py tried_cracked.py
+
+

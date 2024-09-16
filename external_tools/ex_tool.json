@@ -1,8 +1,0 @@
-{
-  "external_tools": {
-    "Password-Scripts_ex_tool":{
-      "installed": true,
-      "source_git": "https://github.com/Omelug/Password-Scripts_ex_tool"
-    }
-  }
-}

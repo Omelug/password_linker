@@ -10,12 +10,12 @@ install:
 	#TODO zkontrolovat, ze se vytvori output slozky
 
 venv: #FIXME zkontrolovat venv na stáhnutí vsech zavislosti
-	python -m venv venv
+	python3 -m venv venv
 	#source ./venv/bin/activate
-	which python
+	which python3
 
 passlist_test:
-	python -m doctest -v passlist.py
+	python3 -m doctest -v passlist.py
 
 save_requirements: #tun WITOUT SUDO !!!! (jiank se to spusti v globalnim pythonu)
 	pip3 install --upgrade pip

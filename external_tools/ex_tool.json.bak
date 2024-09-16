@@ -4,5 +4,15 @@
       "installed": false,
       "source_git": "https://github.com/Omelug/Password-Scripts_ex_tool"
     }
+  },
+  "brutespray":{
+    "installed": false,
+    "source_git": "https://github.com/Omelug/Password-Scripts_ex_tool",
+    "name": "brutespray"
+  },
+  "openssh_scanner":{
+    "installed": false,
+    "source_git": "https://github.com/bigb0x/OpenSSH-Scanner",
+    "name": "openssh_scanner"
   }
 }

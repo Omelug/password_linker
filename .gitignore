@@ -2,6 +2,8 @@
 /rsc
 /.idea
 venv
+.idea
+
 /TelegramChecker/regex_checker/options.json
 /python_pass_web_bots/build
 /python_pass_web_bots/python_pass_web_bots.egg-info
@@ -22,3 +24,6 @@ venv
 /external_tools/output/
 /external_tools/pipal/
 /external_tools/Password-Scripts_ex_tool/
+/external_tools/ex_tool.json
+
+/script/scanner/scans/test

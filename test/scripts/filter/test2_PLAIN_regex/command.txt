@@ -1,1 +1,1 @@
-python3 ../../pass_hub.py filter.py --regex_name PLAIN_TEXT
+python3 ../../pass_hub.py filter.py --regex_name PLAIN_TEXT -in_for REG_FILE_LIST

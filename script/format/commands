@@ -11,7 +11,7 @@ find ./rsc/ | grep -P ".*?/edited/.*?/.*?pass(.[^/])?\.txt"  | xargs cat | sort 
 
 
 link all password resources from edited
-find ./rsc/ | grep -P ".*?/edited/.*?/.*?pass(.[^/])?\.txt" | python3 passlist.py link pass | sort -u
+find ./rsc/ | grep -P ".*?/edited/.*?/.*?pass(.[^/])?\.txt" | python3 pass_hub.py linker.py pass | sort -u
 --------------------------------------------------------
 
 

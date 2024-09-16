@@ -3,8 +3,7 @@ import os
 import shutil
 import sys
 import re
-from lib.logfile import LogFile
-from colorama import Fore, Style
+from colorama import Fore
 
 lib_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), '.')
 sys.path.append(lib_dir)
@@ -45,23 +44,7 @@ def control_file_regex(filepath, regex_pattern, patch=None) -> bool:
 def control_file_list_file_regex(input_stream, patch=None):
     for line in input_stream:
         regex = file_regex_to_regex(line)
-        control_file_regex(line, '^' + regex + SEP + '?$', patch)
-
-
-def print_help():
-    print(
-        """
-        python3 pass_hub.py <script> <args>
-        
-        stdin -> stdout 
-        
-        Base scripts
-        link - link lists
-        compress - merge list, remove duplicates
-        mask - find masks for list
-        """, file=sys.stderr
-    )
-
+        control_file_regex(line, f"^{regex}{SEP}?$", patch)
 
 def print_e(msg):
     print(Fore.RED + msg, file=sys.stderr)
@@ -88,8 +71,9 @@ def import_script(script_path):
     return imported_script
 
 if __name__ == "__main__":
-    if sys.argv[1] == "help" or sys.argv[1] is None:
-        print_help()
+
+    if len(sys.argv) < 2 or sys.argv[1] == "help":
+        print("TODO help messafe")
     else:
         script_path = find_script_path(sys.argv[1])
         imported_script = import_script(script_path)
@@ -116,9 +100,6 @@ if __name__ == "__main__":
         run_func = getattr(imported_script, 'run')
         run_func(args=sys.argv,config=CONFIG)
 """
-    if len(sys.argv) < 2:
-        print_help()
-        sys.exit(0)
     if sys.argv[1] == "file_regex":
         print_file_regex(sys.stdin)
         sys.exit(0)

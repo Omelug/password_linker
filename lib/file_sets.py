@@ -54,16 +54,6 @@ def intersection_stats(r_link, c_list):
             table.data[i][j] = compute_intersection_size(table.r_list[i], table.c_list[j])
     return table
 
-    """results = []
-    for other_file in file_list_stream:
-        intersection_size = compute_intersection_size(target_file, other_file)
-        percentage = "TS0"
-        if target_size != 0:
-            percentage = (intersection_size / target_size) * 100
-        results.append((other_file, intersection_size, percentage))
-    for file, size, percentage in results:
-        print(f"{file:<80}\t{size}\t{percentage:.2f}")
-    """
 def target_list():
     # stdin file list -> intersection report
     # python3 ./lib/file_sets.py file_sets.py <target_file> <column>
