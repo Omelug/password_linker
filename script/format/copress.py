@@ -1,6 +1,6 @@
 import logging
 import os
-import input_parser
+import argparse
 
 __author__ = 'Omelug'
 __date__ = '2024'
@@ -11,11 +11,8 @@ conf = {}
 
 logging.basicConfig(level=logging.INFO)
 
-def print_help():
-    pass
-
 def get_args(args):
-    parser = input_parser.InputParser(description="Compress Script")
+    parser = argparse.ArgumentParser(description="Compress Script")
     parsed_args, _ = parser.parse_known_args(args)
     return parsed_args
 
